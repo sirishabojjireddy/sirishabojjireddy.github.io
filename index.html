@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -340,31 +341,30 @@ li {
   margin-bottom:8px;
 }
 
-/* Certifications and recognition */
+/* Certifications and professional activities bullet lists */
 
-.cert-grid,
-.recognition-grid {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:13px;
+.bullet-list {
+  padding-left:21px;
+  margin:10px 0 12px;
 }
 
-.mini-card {
-  border:1px solid var(--line);
-  border-radius:12px;
-  padding:15px;
-  background:#fbfdff;
+.bullet-list li {
+  padding-left:3px;
+  margin:10px 0;
+  line-height:1.7;
 }
 
-.mini-card p {
-  margin:5px 0 0;
-  color:var(--muted);
-  font-size:.9rem;
+.bullet-list strong {
+  color:var(--navy);
 }
 
-.mini-card a {
+.bullet-list a {
   font-weight:700;
-  font-size:.9rem;
+  text-decoration:none;
+}
+
+.bullet-list a:hover {
+  text-decoration:underline;
 }
 
 /* Contact */
@@ -405,7 +405,7 @@ footer {
   color:#8fe1e5;
 }
 
-/* Expandable sections and experience entries */
+/* Expandable sections and individual experience entries */
 
 .section-summary,
 .exp-summary {
@@ -498,11 +498,6 @@ details[open]>.exp-summary:after {
     grid-template-columns:1fr;
   }
 
-  .cert-grid,
-  .recognition-grid {
-    grid-template-columns:1fr;
-  }
-
   .contact-grid {
     grid-template-columns:1fr 1fr;
   }
@@ -551,6 +546,8 @@ details[open]>.exp-summary:after {
   }
 }
 
+/* Print */
+
 @media print {
   nav,
   .actions,
@@ -572,10 +569,7 @@ details[open]>.exp-summary:after {
     break-inside:avoid;
   }
 
-  .section-details:not([open])>.section-content {
-    display:block;
-  }
-
+  .section-details:not([open])>.section-content,
   .experience-details:not([open])>.experience-content {
     display:block;
   }
@@ -584,6 +578,8 @@ details[open]>.exp-summary:after {
 </head>
 
 <body>
+
+<!-- HERO HEADER -->
 
 <header class="hero" id="top">
   <div class="hero-inner">
@@ -600,11 +596,8 @@ details[open]>.exp-summary:after {
     </p>
 
     <div class="actions">
-      <a class="btn primary" href="Sirisha_Bojjireddy_Resume.pdf" download>
-        ↓ Download Resume (PDF)
-      </a>
 
-      <a class="btn" href="mailto:sirishabojjireddy12@gmail.com">
+      <a class="btn primary" href="mailto:sirishabojjireddy12@gmail.com">
         ✉ Email Me
       </a>
 
@@ -621,9 +614,16 @@ details[open]>.exp-summary:after {
          target="_blank" rel="noopener noreferrer">
         GitHub
       </a>
+
+      <a class="btn" href="Sirisha_Bojjireddy_Resume.pdf" download>
+        ↓ Download Resume (PDF)
+      </a>
+
     </div>
   </div>
 </header>
+
+<!-- NAVIGATION -->
 
 <nav aria-label="Main navigation">
   <div class="nav-inner">
@@ -641,764 +641,734 @@ details[open]>.exp-summary:after {
 
 <main>
 
-  <!-- ABOUT AND EDUCATION -->
+<!-- ABOUT AND EDUCATION -->
 
-  <div class="intro-grid">
+<div class="intro-grid">
 
-    <section class="panel" id="about">
-      <details class="section-details">
-        <summary class="section-summary">
-          <h2>About Me</h2>
-        </summary>
+  <section class="panel" id="about">
+    <h2>About Me</h2>
 
-        <div class="section-content">
-          <p>
-            Senior Business Analyst with 7+ years of professional experience
-            translating business requirements into data-driven BI solutions
-            across insurance, healthcare, research and higher education.
-          </p>
+    <p>
+      Senior Business Analyst with 7+ years of professional experience
+      translating business requirements into data-driven BI solutions
+      across insurance, healthcare, research and higher education.
+    </p>
 
-          <p>
-            I specialize in stakeholder management, requirements gathering,
-            business intelligence, SQL, data quality, governance, automation,
-            UAT, Agile delivery and process improvement. I have also adopted
-            responsible AI practices to help teams explore emerging
-            technologies with purpose.
-          </p>
+    <p>
+      I specialize in stakeholder management, requirements gathering,
+      business intelligence, SQL, data quality, governance, automation,
+      UAT, Agile delivery and process improvement. I have also adopted
+      responsible AI practices to help teams explore emerging
+      technologies with purpose.
+    </p>
+  </section>
+
+  <section class="panel" id="education">
+    <h2>Education</h2>
+
+    <div class="education-item">
+      <strong>Master of Business Administration (MBA)</strong>
+      <span>University of Nebraska at Omaha (UNO), Omaha, Nebraska</span>
+      <div class="date">In Progress</div>
+    </div>
+
+    <div class="education-item">
+      <strong>Master of Science (M.S.) in Data Science</strong>
+      <span>New Jersey Institute of Technology (NJIT), Newark, New Jersey</span>
+      <div class="date">December 2020</div>
+    </div>
+
+    <div class="education-item">
+      <strong>Bachelor of Engineering (B.E.) in Electronics &amp; Communication</strong>
+      <span>Anna University, Chennai, India</span>
+      <div class="date">August 2016</div>
+    </div>
+  </section>
+
+</div>
+
+<!-- CORE COMPETENCIES -->
+
+<section class="panel" id="competencies">
+  <details class="section-details">
+    <summary class="section-summary">
+      <h2>Core Competencies</h2>
+    </summary>
+
+    <div class="section-content">
+
+      <div class="skill-group">
+        <h3>Business Analysis</h3>
+        <div class="chips">
+          <span class="chip">Requirements Gathering</span>
+          <span class="chip">BRD / FRD</span>
+          <span class="chip">Stakeholder Management</span>
+          <span class="chip">Business Process Analysis</span>
+          <span class="chip">Gap Analysis</span>
+          <span class="chip">Process Improvement</span>
+          <span class="chip">Process Mapping</span>
+          <span class="chip">Use Cases</span>
         </div>
-      </details>
-    </section>
+      </div>
 
-    <section class="panel" id="education">
-      <details class="section-details">
-        <summary class="section-summary">
-          <h2>Education</h2>
-        </summary>
-
-        <div class="section-content">
-
-          <div class="education-item">
-            <strong>Master of Business Administration (MBA)</strong>
-            <span>University of Nebraska at Omaha (UNO), Omaha, Nebraska</span>
-            <div class="date">In Progress</div>
-          </div>
-
-          <div class="education-item">
-            <strong>Master of Science (M.S.) in Data Science</strong>
-            <span>New Jersey Institute of Technology (NJIT), Newark, New Jersey</span>
-            <div class="date">December 2020</div>
-          </div>
-
-          <div class="education-item">
-            <strong>Bachelor of Engineering (B.E.) in Electronics &amp; Communication</strong>
-            <span>Anna University, Chennai, India</span>
-            <div class="date">August 2016</div>
-          </div>
-
+      <div class="skill-group">
+        <h3>Business Intelligence &amp; Analytics</h3>
+        <div class="chips">
+          <span class="chip">Dashboard Development</span>
+          <span class="chip">Data Visualization</span>
+          <span class="chip">Descriptive Analytics</span>
+          <span class="chip">KPI Reporting</span>
+          <span class="chip">Data Modeling</span>
         </div>
-      </details>
-    </section>
+      </div>
+
+      <div class="skill-group">
+        <h3>Data Governance</h3>
+        <div class="chips">
+          <span class="chip">Data Quality</span>
+          <span class="chip">Metadata Management</span>
+          <span class="chip">Data Catalog</span>
+          <span class="chip">Report Catalog</span>
+          <span class="chip">Data Dictionary</span>
+          <span class="chip">Data Mapping</span>
+          <span class="chip">Data Lineage</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>AI, Data Science &amp; Automation</h3>
+        <div class="chips">
+          <span class="chip">Generative AI</span>
+          <span class="chip">ChatGPT</span>
+          <span class="chip">Claude</span>
+          <span class="chip">Microsoft Copilot</span>
+          <span class="chip">Google Gemini</span>
+          <span class="chip">Prompt Engineering</span>
+          <span class="chip">NLP</span>
+          <span class="chip">LLMs</span>
+          <span class="chip">Predictive Modeling</span>
+          <span class="chip">Machine Learning</span>
+          <span class="chip">Deep Learning</span>
+          <span class="chip">Neural Networks</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Delivery</h3>
+        <div class="chips">
+          <span class="chip">User Stories</span>
+          <span class="chip">User Acceptance Testing (UAT)</span>
+          <span class="chip">Agile</span>
+          <span class="chip">Scrum</span>
+          <span class="chip">Backlog Management</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Collaboration &amp; Communication</h3>
+        <div class="chips">
+          <span class="chip">Mentoring</span>
+          <span class="chip">Cross-functional Collaboration</span>
+          <span class="chip">Facilitation</span>
+          <span class="chip">Knowledge Sharing</span>
+          <span class="chip">Continuous Improvement</span>
+        </div>
+      </div>
+
+    </div>
+  </details>
+</section>
+
+<!-- TECHNICAL SKILLS -->
+
+<section class="panel" id="technical">
+  <details class="section-details">
+    <summary class="section-summary">
+      <h2>Technical Skills</h2>
+    </summary>
+
+    <div class="section-content">
+
+      <div class="skill-group">
+        <h3>BI, Reporting &amp; Analytics</h3>
+        <div class="chips">
+          <span class="chip">Power BI</span>
+          <span class="chip">DAX</span>
+          <span class="chip">Power Query</span>
+          <span class="chip">Power BI Report Builder</span>
+          <span class="chip">Tableau Desktop</span>
+          <span class="chip">Tableau Prep</span>
+          <span class="chip">Tableau Flows</span>
+          <span class="chip">SSRS</span>
+          <span class="chip">Qlik</span>
+          <span class="chip">Cognos Analytics</span>
+          <span class="chip">MicroStrategy</span>
+          <span class="chip">SAP BusinessObjects</span>
+          <span class="chip">WebFOCUS</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Data &amp; ETL</h3>
+        <div class="chips">
+          <span class="chip">SQL</span>
+          <span class="chip">Python</span>
+          <span class="chip">R</span>
+          <span class="chip">SQL Server Integration Services (SSIS)</span>
+          <span class="chip">Informatica PowerCenter</span>
+          <span class="chip">Talend</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Application Development, Big Data &amp; Cloud</h3>
+        <div class="chips">
+          <span class="chip">Apache Spark SQL</span>
+          <span class="chip">AWS</span>
+          <span class="chip">Microsoft Azure</span>
+          <span class="chip">Google Cloud Platform (GCP)</span>
+          <span class="chip">Python Flask</span>
+          <span class="chip">Docker</span>
+          <span class="chip">REST APIs</span>
+          <span class="chip">ShinyApps</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Project &amp; Delivery Tools</h3>
+        <div class="chips">
+          <span class="chip">Jira</span>
+          <span class="chip">Azure DevOps</span>
+          <span class="chip">Smartsheet</span>
+          <span class="chip">Microsoft Visio</span>
+          <span class="chip">Microsoft Excel</span>
+          <span class="chip">Microsoft PowerPoint</span>
+          <span class="chip">RapidMiner</span>
+          <span class="chip">Minitab</span>
+          <span class="chip">SAS JMP</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Enterprise Systems, CRM &amp; Data Governance</h3>
+        <div class="chips">
+          <span class="chip">PeopleSoft</span>
+          <span class="chip">Blackbaud Raiser’s Edge</span>
+          <span class="chip">Ellucian Advance</span>
+          <span class="chip">Salesforce</span>
+          <span class="chip">Data Cookbook</span>
+          <span class="chip">OpenMetadata</span>
+          <span class="chip">Secoda</span>
+          <span class="chip">Microsoft Purview</span>
+          <span class="chip">Git</span>
+          <span class="chip">GitHub</span>
+          <span class="chip">GitLab</span>
+        </div>
+      </div>
+
+    </div>
+  </details>
+</section>
+
+<!-- PROFESSIONAL EXPERIENCE: STATIC HEADING, INDIVIDUAL EXPANSION -->
+
+<section class="panel" id="experience">
+  <h2>Professional Experience</h2>
+
+  <div class="section-content">
+
+    <!-- UNO -->
+
+    <details class="experience experience-details">
+      <summary class="exp-summary">
+        <div class="exp-head">
+          <div>
+            <h3>Senior Business Analyst (BI Analyst)</h3>
+            <div class="company">
+              <a href="https://www.unomaha.edu/" target="_blank" rel="noopener noreferrer">
+                University of Nebraska at Omaha (UNO)
+              </a> · Omaha, Nebraska
+            </div>
+          </div>
+          <div class="date">Apr 2024 – Sep 2026</div>
+        </div>
+      </summary>
+
+      <div class="experience-content">
+        <ul>
+          <li>Led requirements gathering and UAT with stakeholders and customers, delivering self-service Power BI and Tableau dashboards for acquisition, retention and outcome KPIs—including graduation, enrollment and student success—to support strategic decision-making.</li>
+          <li>Established data governance and documentation standards through metadata dashboards, report catalogs and data dictionaries, reducing reliance on third-party tools and improving data transparency, consistency and maintainability.</li>
+          <li>Built Salesforce CRM and PeopleSoft ERP reporting and cross-system reconciliation dashboards that automated data validation and auditing, achieving approximately 85% improvement in process efficiency and saving up to four hours per reporting cycle.</li>
+          <li>Modernized BI delivery practices through Agile workflows, Git-based version control, SQL standards and optimization, templates, code reviews and Jira boards.</li>
+          <li>Led the team's Generative AI project, mentored colleagues on responsible AI adoption, and guided interns on predictive modeling and Salesforce projects supporting IESS strategic initiatives.</li>
+        </ul>
+
+        <div class="techline competencyline">
+          <strong>Core competencies:</strong>
+          Requirements gathering, stakeholder engagement, KPI development,
+          BI delivery, data governance, process automation, Agile delivery,
+          UAT and mentoring.
+        </div>
+
+        <div class="techline">
+          <strong>Technical skills:</strong>
+          Power BI, Tableau, SQL, Salesforce CRM, PeopleSoft ERP,
+          metadata dashboards, data dictionaries, Git, Jira, Agile,
+          Generative AI.
+        </div>
+      </div>
+    </details>
+
+    <!-- CREIGHTON -->
+
+    <details class="experience experience-details">
+      <summary class="exp-summary">
+        <div class="exp-head">
+          <div>
+            <h3>Senior Business Analyst (Reporting &amp; BI Analyst)</h3>
+            <div class="company">
+              <a href="https://www.creighton.edu/" target="_blank" rel="noopener noreferrer">
+                Creighton University
+              </a> · Omaha, Nebraska
+            </div>
+          </div>
+          <div class="date">Feb 2021 – Feb 2024</div>
+        </div>
+      </summary>
+
+      <div class="experience-content">
+        <ul>
+          <li>Partnered with senior leadership and cross-functional stakeholders to translate business requirements into Power BI, Tableau and SSRS solutions on CRM data (Advance, Blackbaud), supporting revenue, performance and engagement reporting for executive decision-making.</li>
+          <li>Developed targeted CRM-based customer segmentation and reports through Power BI dashboards to monitor business performance and operational KPIs, contributing to more than $500K raised from 2,300+ donors.</li>
+          <li>Optimized SQL queries, reducing execution time by 75%, and enhanced data quality checks, improving operational efficiency by 95% across advancement reporting.</li>
+          <li>Established data governance practices through data dictionaries, process documentation, data models, report catalogs and metadata assets, laying the foundation for the university’s enterprise Salesforce CRM implementation.</li>
+        </ul>
+
+        <div class="techline competencyline">
+          <strong>Core competencies:</strong>
+          Business requirements analysis, executive reporting,
+          donor/customer segmentation, KPI monitoring, SQL optimization,
+          data quality, CRM analytics and data governance.
+        </div>
+
+        <div class="techline">
+          <strong>Technical skills:</strong>
+          Power BI, Tableau, SSRS, SQL, Ellucian Advance,
+          Blackbaud Raiser’s Edge, CRM reporting, data modeling,
+          data quality, data governance.
+        </div>
+      </div>
+    </details>
+
+    <!-- LTI -->
+
+    <details class="experience experience-details">
+      <summary class="exp-summary">
+        <div class="exp-head">
+          <div>
+            <h3>Business Analyst (Data Analyst / BI Analyst / Data Engineer)</h3>
+            <div class="company">
+              <a href="https://www.ltimindtree.com/" target="_blank" rel="noopener noreferrer">
+                Larsen &amp; Toubro Infotech (LTI)
+              </a> · India
+            </div>
+          </div>
+          <div class="date">Oct 2016 – Dec 2018</div>
+        </div>
+      </summary>
+
+      <div class="experience-content">
+        <ul>
+          <li>Designed SSRS reports and interactive Qlik dashboards for insurance claims, bonds and liabilities, improving visibility into claims operations, fraud trends and operational KPIs to enable faster business decisions.</li>
+          <li>Automated ETL workflows and manual reporting processes using SSIS and Informatica PowerCenter, eliminating approximately 90 hours of manual effort while improving reporting accuracy and operational efficiency.</li>
+          <li>Optimized SQL queries, stored procedures, views and database objects across different databases, reducing report load time by 75%.</li>
+          <li>Partnered with cross-functional teams to troubleshoot production issues and validate reports.</li>
+          <li>Analyzed claims and policyholder data to identify fraud patterns, evaluate customer lifetime value, support premium pricing decisions, and improve reporting performance and reliability.</li>
+        </ul>
+
+        <div class="techline competencyline">
+          <strong>Core competencies:</strong>
+          Insurance claims analysis, business reporting, fraud trend analysis,
+          ETL automation, database optimization, production support and
+          cross-functional collaboration.
+        </div>
+
+        <div class="techline">
+          <strong>Technical skills:</strong>
+          SSRS, Qlik, SQL, stored procedures, database views, SSIS,
+          Informatica PowerCenter, ETL, insurance claims analytics,
+          data validation.
+        </div>
+      </div>
+    </details>
 
   </div>
+</section>
 
-  <!-- CORE COMPETENCIES -->
+<!-- ADDITIONAL PROFESSIONAL EXPERIENCE: STATIC HEADING -->
 
-  <section class="panel" id="competencies">
-    <details class="section-details">
-      <summary class="section-summary">
-        <h2>Core Competencies</h2>
+<section class="panel" id="additional-experience">
+  <h2>Additional Professional Experience</h2>
+
+  <div class="section-content">
+
+    <!-- NEST GLOBAL SOLUTIONS -->
+
+    <details class="experience experience-details">
+      <summary class="exp-summary">
+        <div class="exp-head">
+          <div>
+            <h3>Data Scientist Intern</h3>
+            <div class="company">
+              <a href="https://www.nestsolutions.com/" target="_blank" rel="noopener noreferrer">
+                Nest Global Solutions
+              </a> · Newark, New Jersey
+            </div>
+          </div>
+          <div class="date">Sep 2020 – Dec 2020</div>
+        </div>
       </summary>
 
-      <div class="section-content">
-
-        <div class="skill-group">
-          <h3>Business Analysis</h3>
-          <div class="chips">
-            <span class="chip">Requirements Gathering</span>
-            <span class="chip">BRD / FRD</span>
-            <span class="chip">Stakeholder Management</span>
-            <span class="chip">Business Process Analysis</span>
-            <span class="chip">Gap Analysis</span>
-            <span class="chip">Process Improvement</span>
-            <span class="chip">Process Mapping</span>
-            <span class="chip">Use Cases</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <h3>Business Intelligence &amp; Analytics</h3>
-          <div class="chips">
-            <span class="chip">Dashboard Development</span>
-            <span class="chip">Data Visualization</span>
-            <span class="chip">Descriptive Analytics</span>
-            <span class="chip">KPI Reporting</span>
-            <span class="chip">Data Modeling</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <h3>Data Governance</h3>
-          <div class="chips">
-            <span class="chip">Data Quality</span>
-            <span class="chip">Metadata Management</span>
-            <span class="chip">Data Catalog</span>
-            <span class="chip">Report Catalog</span>
-            <span class="chip">Data Dictionary</span>
-            <span class="chip">Data Mapping</span>
-            <span class="chip">Data Lineage</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <h3>AI, Data Science &amp; Automation</h3>
-          <div class="chips">
-            <span class="chip">Generative AI</span>
-            <span class="chip">ChatGPT</span>
-            <span class="chip">Claude</span>
-            <span class="chip">Microsoft Copilot</span>
-            <span class="chip">Google Gemini</span>
-            <span class="chip">Prompt Engineering</span>
-            <span class="chip">NLP</span>
-            <span class="chip">LLMs</span>
-            <span class="chip">Predictive Modeling</span>
-            <span class="chip">Machine Learning</span>
-            <span class="chip">Deep Learning</span>
-            <span class="chip">Neural Networks</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <h3>Delivery</h3>
-          <div class="chips">
-            <span class="chip">User Stories</span>
-            <span class="chip">User Acceptance Testing (UAT)</span>
-            <span class="chip">Agile</span>
-            <span class="chip">Scrum</span>
-            <span class="chip">Backlog Management</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <h3>Collaboration &amp; Communication</h3>
-          <div class="chips">
-            <span class="chip">Mentoring</span>
-            <span class="chip">Cross-functional Collaboration</span>
-            <span class="chip">Facilitation</span>
-            <span class="chip">Knowledge Sharing</span>
-            <span class="chip">Continuous Improvement</span>
-          </div>
-        </div>
-
-      </div>
-    </details>
-  </section>
-
-  <!-- TECHNICAL SKILLS -->
-
-  <section class="panel" id="technical">
-    <details class="section-details">
-      <summary class="section-summary">
-        <h2>Technical Skills</h2>
-      </summary>
-
-      <div class="section-content">
-
-        <div class="skill-group">
-          <h3>BI, Reporting &amp; Analytics</h3>
-          <div class="chips">
-            <span class="chip">Power BI</span>
-            <span class="chip">DAX</span>
-            <span class="chip">Power Query</span>
-            <span class="chip">Power BI Report Builder</span>
-            <span class="chip">Tableau Desktop</span>
-            <span class="chip">Tableau Prep</span>
-            <span class="chip">Tableau Flows</span>
-            <span class="chip">SSRS</span>
-            <span class="chip">Qlik</span>
-            <span class="chip">Cognos Analytics</span>
-            <span class="chip">MicroStrategy</span>
-            <span class="chip">SAP BusinessObjects</span>
-            <span class="chip">WebFOCUS</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <h3>Data &amp; ETL</h3>
-          <div class="chips">
-            <span class="chip">SQL</span>
-            <span class="chip">Python</span>
-            <span class="chip">R</span>
-            <span class="chip">SQL Server Integration Services (SSIS)</span>
-            <span class="chip">Informatica PowerCenter</span>
-            <span class="chip">Talend</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <h3>Application Development, Big Data &amp; Cloud</h3>
-          <div class="chips">
-            <span class="chip">Apache Spark SQL</span>
-            <span class="chip">AWS</span>
-            <span class="chip">Microsoft Azure</span>
-            <span class="chip">Google Cloud Platform (GCP)</span>
-            <span class="chip">Python Flask</span>
-            <span class="chip">Docker</span>
-            <span class="chip">REST APIs</span>
-            <span class="chip">ShinyApps</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <h3>Project &amp; Delivery Tools</h3>
-          <div class="chips">
-            <span class="chip">Jira</span>
-            <span class="chip">Azure DevOps</span>
-            <span class="chip">Smartsheet</span>
-            <span class="chip">Microsoft Visio</span>
-            <span class="chip">Microsoft Excel</span>
-            <span class="chip">Microsoft PowerPoint</span>
-            <span class="chip">RapidMiner</span>
-            <span class="chip">Minitab</span>
-            <span class="chip">SAS JMP</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <h3>Enterprise Systems, CRM &amp; Data Governance</h3>
-          <div class="chips">
-            <span class="chip">PeopleSoft</span>
-            <span class="chip">Blackbaud Raiser’s Edge</span>
-            <span class="chip">Ellucian Advance</span>
-            <span class="chip">Salesforce</span>
-            <span class="chip">Data Cookbook</span>
-            <span class="chip">OpenMetadata</span>
-            <span class="chip">Secoda</span>
-            <span class="chip">Microsoft Purview</span>
-            <span class="chip">Git</span>
-            <span class="chip">GitHub</span>
-            <span class="chip">GitLab</span>
-          </div>
-        </div>
-
-      </div>
-    </details>
-  </section>
-
-  <!-- PROFESSIONAL EXPERIENCE -->
-
-  <section class="panel" id="experience">
-        <h2>Professional Experience</h2>
-
-      <div class="section-content">
-
-        <!-- UNO -->
-
-        <details class="experience experience-details">
-          <summary class="exp-summary">
-            <div class="exp-head">
-              <div>
-                <h3>Senior Business Analyst (BI Analyst)</h3>
-                <div class="company">
-                  <a href="https://www.unomaha.edu/" target="_blank" rel="noopener noreferrer">
-                    University of Nebraska at Omaha (UNO)
-                  </a> · Omaha, Nebraska
-                </div>
-              </div>
-              <div class="date">Apr 2024 – Sep 2026</div>
-            </div>
-          </summary>
-
-          <div class="experience-content">
-            <ul>
-              <li>Led requirements gathering and UAT with stakeholders and customers, delivering self-service Power BI and Tableau dashboards for acquisition, retention and outcome KPIs—including graduation, enrollment and student success—to support strategic decision-making.</li>
-              <li>Established data governance and documentation standards through metadata dashboards, report catalogs and data dictionaries, reducing reliance on third-party tools and improving data transparency, consistency and maintainability.</li>
-              <li>Built Salesforce CRM and PeopleSoft ERP reporting and cross-system reconciliation dashboards that automated data validation and auditing, achieving approximately 85% improvement in process efficiency and saving up to four hours per reporting cycle.</li>
-              <li>Modernized BI delivery practices through Agile workflows, Git-based version control, SQL standards and optimization, templates, code reviews and Jira boards.</li>
-              <li>Led the team's Generative AI project, mentored colleagues on responsible AI adoption, and guided interns on predictive modeling and Salesforce projects supporting IESS strategic initiatives.</li>
-            </ul>
-
-            <div class="techline competencyline">
-              <strong>Core competencies:</strong>
-              Requirements gathering, stakeholder engagement, KPI development,
-              BI delivery, data governance, process automation, Agile delivery,
-              UAT and mentoring.
-            </div>
-
-            <div class="techline">
-              <strong>Technical skills:</strong>
-              Power BI, Tableau, SQL, Salesforce CRM, PeopleSoft ERP,
-              metadata dashboards, data dictionaries, Git, Jira, Agile,
-              Generative AI.
-            </div>
-          </div>
-        </details>
-
-        <!-- CREIGHTON -->
-
-        <details class="experience experience-details">
-          <summary class="exp-summary">
-            <div class="exp-head">
-              <div>
-                <h3>Senior Business Analyst (Reporting &amp; BI Analyst)</h3>
-                <div class="company">
-                  <a href="https://www.creighton.edu/" target="_blank" rel="noopener noreferrer">
-                    Creighton University
-                  </a> · Omaha, Nebraska
-                </div>
-              </div>
-              <div class="date">Feb 2021 – Feb 2024</div>
-            </div>
-          </summary>
-
-          <div class="experience-content">
-            <ul>
-              <li>Partnered with senior leadership and cross-functional stakeholders to translate business requirements into Power BI, Tableau and SSRS solutions on CRM data (Advance, Blackbaud), supporting revenue, performance and engagement reporting for executive decision-making.</li>
-              <li>Developed targeted CRM-based customer segmentation and reports through Power BI dashboards to monitor business performance and operational KPIs, contributing to more than $500K raised from 2,300+ donors.</li>
-              <li>Optimized SQL queries, reducing execution time by 75%, and enhanced data quality checks, improving operational efficiency by 95% across advancement reporting.</li>
-              <li>Established data governance practices through data dictionaries, process documentation, data models, report catalogs and metadata assets, laying the foundation for the university’s enterprise Salesforce CRM implementation.</li>
-            </ul>
-
-            <div class="techline competencyline">
-              <strong>Core competencies:</strong>
-              Business requirements analysis, executive reporting,
-              donor/customer segmentation, KPI monitoring, SQL optimization,
-              data quality, CRM analytics and data governance.
-            </div>
-
-            <div class="techline">
-              <strong>Technical skills:</strong>
-              Power BI, Tableau, SSRS, SQL, Ellucian Advance,
-              Blackbaud Raiser’s Edge, CRM reporting, data modeling,
-              data quality, data governance.
-            </div>
-          </div>
-        </details>
-
-        <!-- LTI -->
-
-        <details class="experience experience-details">
-          <summary class="exp-summary">
-            <div class="exp-head">
-              <div>
-                <h3>Business Analyst (Data Analyst / BI Analyst / Data Engineer)</h3>
-                <div class="company">
-                  <a href="https://www.ltimindtree.com/" target="_blank" rel="noopener noreferrer">
-                    Larsen &amp; Toubro Infotech (LTI)
-                  </a> · India
-                </div>
-              </div>
-              <div class="date">Oct 2016 – Dec 2018</div>
-            </div>
-          </summary>
-
-          <div class="experience-content">
-            <ul>
-              <li>Designed SSRS reports and interactive Qlik dashboards for insurance claims, bonds and liabilities, improving visibility into claims operations, fraud trends and operational KPIs to enable faster business decisions.</li>
-              <li>Automated ETL workflows and manual reporting processes using SSIS and Informatica PowerCenter, eliminating approximately 90 hours of manual effort while improving reporting accuracy and operational efficiency.</li>
-              <li>Optimized SQL queries, stored procedures, views and database objects across different databases, reducing report load time by 75%.</li>
-              <li>Partnered with cross-functional teams to troubleshoot production issues and validate reports.</li>
-              <li>Analyzed claims and policyholder data to identify fraud patterns, evaluate customer lifetime value, support premium pricing decisions, and improve reporting performance and reliability.</li>
-            </ul>
-
-            <div class="techline competencyline">
-              <strong>Core competencies:</strong>
-              Insurance claims analysis, business reporting, fraud trend analysis,
-              ETL automation, database optimization, production support and
-              cross-functional collaboration.
-            </div>
-
-            <div class="techline">
-              <strong>Technical skills:</strong>
-              SSRS, Qlik, SQL, stored procedures, database views, SSIS,
-              Informatica PowerCenter, ETL, insurance claims analytics,
-              data validation.
-            </div>
-          </div>
-        </details>
-
-      </div>
-    </details>
-  </section>
-
-  <!-- ADDITIONAL PROFESSIONAL EXPERIENCE -->
-
-  <section class="panel" id="additional-experience">
-        <h2>Additional Professional Experience</h2>
-      <div class="section-content">
-
-        <!-- NEST GLOBAL SOLUTIONS -->
-
-        <details class="experience experience-details">
-          <summary class="exp-summary">
-            <div class="exp-head">
-              <div>
-                <h3>Data Scientist Intern</h3>
-                <div class="company">
-                  <a href="https://www.nestsolutions.com/" target="_blank" rel="noopener noreferrer">
-                    Nest Global Solutions
-                  </a> · Newark, New Jersey
-                </div>
-              </div>
-              <div class="date">Sep 2020 – Dec 2020</div>
-            </div>
-          </summary>
-
-          <div class="experience-content">
-            <ul>
-              <li>Developed machine learning and NLP solutions for healthcare information retrieval through a chatbot/search engine, including sentiment analysis models achieving up to 83% accuracy in text classification and 80% in sentiment analysis.</li>
-              <li>Built end-to-end data pipelines covering raw data collection, exploratory data analysis (EDA), automated data preparation, AWS-based cloud pipelines and semantic search APIs to connect similar users with more relevant resources and support context-aware retrieval.</li>
-            </ul>
-
-            <div class="techline competencyline">
-              <strong>Core competencies:</strong>
-              Healthcare NLP, machine learning, sentiment analysis,
-              information retrieval, data pipeline development and
-              cloud-based solution delivery.
-            </div>
-
-            <div class="techline">
-              <strong>Technical skills:</strong>
-              Python, machine learning, NLP, sentiment analysis,
-              text classification, EDA, AWS, data pipelines,
-              semantic search APIs.
-            </div>
-          </div>
-        </details>
-
-        <!-- NJIT RESEARCH ASSISTANT -->
-
-        <details class="experience experience-details">
-          <summary class="exp-summary">
-            <div class="exp-head">
-              <div>
-                <h3>Research Assistant</h3>
-                <div class="company">
-                  <a href="https://www.njit.edu/" target="_blank" rel="noopener noreferrer">
-                    New Jersey Institute of Technology (NJIT)
-                  </a> · Newark, New Jersey · under Professor Dr. James Geller
-                  &amp; Dr. Soon Ae Chun
-                </div>
-              </div>
-              <div class="date">Nov 2019 – Dec 2020</div>
-            </div>
-          </summary>
-
-          <div class="experience-content">
-            <ul>
-              <li>Collected data through web scraping using Python and performed EDA, data mining, preprocessing, named entity recognition (NER) and sentiment analysis to support social media and misinformation detection.</li>
-              <li>Developed and deployed a Python Flask web application for fake news detection using NLP, Docker and cloud services, improving text classification accuracy from 95% to 97% through feature engineering and model optimization.</li>
-              <li>Presented research at the ACM Digital Government (dg.o 2021) Conference and earned the Best Poster Award for the web application and comparative model study.</li>
-            </ul>
-
-            <div class="techline competencyline">
-              <strong>Core competencies:</strong>
-              Applied research, data collection, exploratory data analysis,
-              NLP model development, misinformation detection,
-              experimentation and research presentation.
-            </div>
-
-            <div class="techline">
-              <strong>Technical skills:</strong>
-              Python, web scraping, EDA, data mining, NLP, NER,
-              sentiment analysis, Flask, Docker, cloud services,
-              feature engineering.
-            </div>
-          </div>
-        </details>
-
-        <!-- GWiCS OUTREACH ASSISTANT -->
-
-        <details class="experience experience-details">
-          <summary class="exp-summary">
-            <div class="exp-head">
-              <div>
-                <h3>Outreach Assistant</h3>
-                <div class="company">
-                  <a href="https://www.njit.edu/" target="_blank" rel="noopener noreferrer">
-                    NJIT
-                  </a> · Graduate Women in Computing Society (GWiCS),
-                  Newark, New Jersey
-                </div>
-              </div>
-              <div class="date">Oct 2019 – Dec 2020</div>
-            </div>
-          </summary>
-
-          <div class="experience-content">
-            <ul>
-              <li>Coordinated STEM outreach events, workshops and guest speakers, managing logistics and communications with faculty, alumni, public schools and community partners.</li>
-              <li>Established volunteer recruitment and onboarding processes, supported executive committee succession planning, and led knowledge-sharing through documentation and digital communications, including social media and discussion channels.</li>
-            </ul>
-
-            <div class="techline competencyline">
-              <strong>Core competencies:</strong>
-              STEM outreach, event coordination, volunteer recruitment,
-              stakeholder engagement, communications, onboarding and
-              knowledge transfer.
-            </div>
-
-            <div class="techline">
-              <strong>Tools &amp; capabilities:</strong>
-              Digital communications, social media marketing, event coordination,
-              volunteer onboarding, documentation, stakeholder and
-              community engagement.
-            </div>
-          </div>
-        </details>
-
-        <!-- NJIT IT SUPPORT -->
-
-        <details class="experience experience-details">
-          <summary class="exp-summary">
-            <div class="exp-head">
-              <div>
-                <h3>IT Support Engineer</h3>
-                <div class="company">
-                  <a href="https://ist.njit.edu/" target="_blank" rel="noopener noreferrer">
-                    IST Service Desk, NJIT
-                  </a> · Newark, New Jersey
-                </div>
-              </div>
-              <div class="date">Jun 2019 – Dec 2020</div>
-            </div>
-          </summary>
-
-          <div class="experience-content">
-            <ul>
-              <li>Provided frontline technical support to hundreds of students, faculty and staff by resolving approximately 10–30 support requests per week involving user accounts, software, VPN, email, network connectivity and system access.</li>
-              <li>Helped minimize operational disruptions by troubleshooting end-user technology issues and supporting reliable access to university systems and services.</li>
-            </ul>
-
-            <div class="techline competencyline">
-              <strong>Core competencies:</strong>
-              End-user support, incident triage, technical troubleshooting,
-              account access support, service delivery and user communication.
-            </div>
-
-            <div class="techline">
-              <strong>Technical skills:</strong>
-              IT service desk support, user account administration,
-              software troubleshooting, VPN, email, network connectivity,
-              system access, end-user support.
-            </div>
-          </div>
-        </details>
-
-      </div>
-    </details>
-  </section>
-
-  <!-- CERTIFICATIONS: SEPARATE FULL-WIDTH EXPANDABLE SECTION -->
-
-  <section class="panel" id="certifications">
-    <details class="section-details">
-      <summary class="section-summary">
-        <h2>Certifications</h2>
-      </summary>
-
-      <div class="section-content">
-        <div class="cert-grid">
-
-          <div class="mini-card">
-            <h3>Salesforce Certified Tableau Data Analyst</h3>
-            <p>Professional certification in Tableau analytics.</p>
-            <a href="https://trailhead.salesforce.com/en/credentials/verification/"
-               target="_blank" rel="noopener noreferrer">
-              Salesforce credential verification portal ↗
-            </a>
-          </div>
-
-          <div class="mini-card">
-            <h3>AWS Certified Solutions Architect – Associate</h3>
-            <p>Cloud architecture certification.</p>
-            <a href="https://aws.amazon.com/certification/certification-digital-badges/"
-               target="_blank" rel="noopener noreferrer">
-              AWS digital badge and verification information ↗
-            </a>
-          </div>
-
-          <div class="mini-card">
-            <h3>Generative AI Training – University of Nebraska at Omaha</h3>
-            <p>
-              Generative AI training for faculty, staff and students;
-              trained as a teacher.
-            </p>
-            <a href="https://www.unomaha.edu/" target="_blank" rel="noopener noreferrer">
-              University of Nebraska at Omaha ↗
-            </a>
-          </div>
-
-          <div class="mini-card">
-            <h3>Additional Professional Development</h3>
-            <p>
-              Continuous learning through Coursera, LinkedIn Learning,
-              O’Reilly, Microsoft Learn and Salesforce Trailblazer.
-            </p>
-            <a href="https://www.coursera.org/" target="_blank" rel="noopener noreferrer">Coursera</a> ·
-            <a href="https://www.linkedin.com/learning/" target="_blank" rel="noopener noreferrer">LinkedIn Learning</a> ·
-            <a href="https://learn.microsoft.com/" target="_blank" rel="noopener noreferrer">Microsoft Learn</a>
-          </div>
-
-        </div>
-
-        <p class="muted" style="font-size:.88rem;margin-top:13px">
-          For individual credential validation, add your personal Salesforce
-          verification profile and AWS Credly badge URLs when available.
-          The links above lead to the official verification guidance/portals,
-          not an individual credential record.
-        </p>
-      </div>
-    </details>
-  </section>
-
-  <!-- PROFESSIONAL ACTIVITIES & RECOGNITIONS: SEPARATE FULL-WIDTH EXPANDABLE SECTION -->
-
-  <section class="panel" id="recognition">
-    <details class="section-details">
-      <summary class="section-summary">
-        <h2>Professional Activities &amp; Recognitions</h2>
-      </summary>
-
-      <div class="section-content">
-        <div class="recognition-grid">
-
-          <div class="mini-card">
-            <h3>ACM Digital Government (dg.o 2021)</h3>
-            <p>
-              Co-authored and presented a research paper and received
-              the Best Poster Award.
-            </p>
-          </div>
-
-          <div class="mini-card">
-            <h3>Higher Education Data Engagement (HEDW)</h3>
-            <p>
-              Ranked #6 among community participants for knowledge sharing
-              and engagement; active contributor to the Higher Ed Tableau
-              Users Group (HETUG).
-            </p>
-            <a href="https://www.hedw.org/" target="_blank" rel="noopener noreferrer">
-              HEDW community ↗
-            </a>
-          </div>
-
-          <div class="mini-card">
-            <h3>UNO Spring AI Summit</h3>
-            <p>
-              Represented the team as a presenter, sharing Artificial
-              Intelligence initiatives and projects.
-            </p>
-            <a href="https://www.unomaha.edu/" target="_blank" rel="noopener noreferrer">
-              UNO ↗
-            </a>
-          </div>
-
-          <div class="mini-card">
-            <h3>NJIT Graduate Recognition</h3>
-            <p>
-              Recognized by faculty for leading applied machine learning
-              research and Women in Computing outreach; received a
-              competitive graduate award.
-            </p>
-            <a href="https://www.njit.edu/" target="_blank" rel="noopener noreferrer">
-              NJIT ↗
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </details>
-  </section>
-
-  <!-- VOLUNTEER EXPERIENCE -->
-
-  <section class="panel" id="volunteer">
-    <details class="section-details">
-      <summary class="section-summary">
-        <h2>Volunteer Experience &amp; Community Engagement</h2>
-      </summary>
-
-      <div class="section-content">
+      <div class="experience-content">
         <ul>
-          <li>
-            <strong>Nebraska Women in STEM:</strong>
-            Supported community events and contributed to the 2026 award
-            committee, with continued involvement planned for 2027.
-          </li>
-
-          <li>
-            <strong>Data Visualization Society, Big Brothers Big Sisters
-            and AnitaB.org:</strong>
-            Contributed to community learning through mentoring, teaching,
-            blog writing and committee participation.
-          </li>
-
-          <li>
-            <strong>UNO and Creighton University:</strong>
-            Participated in wellness committees and staff volunteer initiatives.
-          </li>
+          <li>Developed machine learning and NLP solutions for healthcare information retrieval through a chatbot/search engine, including sentiment analysis models achieving up to 83% accuracy in text classification and 80% in sentiment analysis.</li>
+          <li>Built end-to-end data pipelines covering raw data collection, exploratory data analysis (EDA), automated data preparation, AWS-based cloud pipelines and semantic search APIs to connect similar users with more relevant resources and support context-aware retrieval.</li>
         </ul>
-      </div>
-    </details>
-  </section>
 
-  <!-- CONTACT -->
+        <div class="techline competencyline">
+          <strong>Core competencies:</strong>
+          Healthcare NLP, machine learning, sentiment analysis,
+          information retrieval, data pipeline development and
+          cloud-based solution delivery.
+        </div>
 
-  <section class="panel" id="contact">
-          <h2>Let’s Connect</h2>
-      <div class="section-content">
-        <p>
-          I welcome conversations about my profile or your interest.
-        </p>
-
-        <div class="contact-grid">
-
-          <div class="contact-card">
-            <strong>Email Me</strong>
-            <a href="mailto:sirishabojjireddy12@gmail.com">
-              sirishabojjireddy12@gmail.com
-            </a>
-          </div>
-
-          <div class="contact-card">
-            <strong>LinkedIn</strong>
-            <a href="https://www.linkedin.com/in/sirishabojjireddy/"
-               target="_blank" rel="noopener noreferrer">
-              Connect with me
-            </a>
-          </div>
-
-          <div class="contact-card">
-            <strong>GitHub</strong>
-            <a href="https://github.com/sirishabojjireddy"
-               target="_blank" rel="noopener noreferrer">
-              View my repositories
-            </a>
-          </div>
-
-          <div class="contact-card">
-            <strong>Phone</strong>
-            <a href="tel:+917530040519">+91-7530040519</a>
-          </div>
-
-          <div class="contact-card">
-            <strong>Resume</strong>
-            <a href="Sirisha_Bojjireddy_Resume.pdf" download>
-              Download resume (PDF)
-            </a>
-          </div>
-
-          <div class="contact-card">
-            <strong>Location</strong>
-            India
-          </div>
-
+        <div class="techline">
+          <strong>Technical skills:</strong>
+          Python, machine learning, NLP, sentiment analysis,
+          text classification, EDA, AWS, data pipelines,
+          semantic search APIs.
         </div>
       </div>
     </details>
-  </section>
+
+    <!-- NJIT RESEARCH ASSISTANT -->
+
+    <details class="experience experience-details">
+      <summary class="exp-summary">
+        <div class="exp-head">
+          <div>
+            <h3>Research Assistant</h3>
+            <div class="company">
+              <a href="https://www.njit.edu/" target="_blank" rel="noopener noreferrer">
+                New Jersey Institute of Technology (NJIT)
+              </a> · Newark, New Jersey · under Professor Dr. James Geller
+              &amp; Dr. Soon Ae Chun
+            </div>
+          </div>
+          <div class="date">Nov 2019 – Dec 2020</div>
+        </div>
+      </summary>
+
+      <div class="experience-content">
+        <ul>
+          <li>Collected data through web scraping using Python and performed EDA, data mining, preprocessing, named entity recognition (NER) and sentiment analysis to support social media and misinformation detection.</li>
+          <li>Developed and deployed a Python Flask web application for fake news detection using NLP, Docker and cloud services, improving text classification accuracy from 95% to 97% through feature engineering and model optimization.</li>
+          <li>Presented research at the ACM Digital Government (dg.o 2021) Conference and earned the Best Poster Award for the web application and comparative model study.</li>
+        </ul>
+
+        <div class="techline competencyline">
+          <strong>Core competencies:</strong>
+          Applied research, data collection, exploratory data analysis,
+          NLP model development, misinformation detection,
+          experimentation and research presentation.
+        </div>
+
+        <div class="techline">
+          <strong>Technical skills:</strong>
+          Python, web scraping, EDA, data mining, NLP, NER,
+          sentiment analysis, Flask, Docker, cloud services,
+          feature engineering.
+        </div>
+      </div>
+    </details>
+
+    <!-- GWiCS OUTREACH ASSISTANT -->
+
+    <details class="experience experience-details">
+      <summary class="exp-summary">
+        <div class="exp-head">
+          <div>
+            <h3>Outreach Assistant</h3>
+            <div class="company">
+              <a href="https://www.njit.edu/" target="_blank" rel="noopener noreferrer">
+                NJIT
+              </a> · Graduate Women in Computing Society (GWiCS),
+              Newark, New Jersey
+            </div>
+          </div>
+          <div class="date">Oct 2019 – Dec 2020</div>
+        </div>
+      </summary>
+
+      <div class="experience-content">
+        <ul>
+          <li>Coordinated STEM outreach events, workshops and guest speakers, managing logistics and communications with faculty, alumni, public schools and community partners.</li>
+          <li>Established volunteer recruitment and onboarding processes, supported executive committee succession planning, and led knowledge-sharing through documentation and digital communications, including social media and discussion channels.</li>
+        </ul>
+
+        <div class="techline competencyline">
+          <strong>Core competencies:</strong>
+          STEM outreach, event coordination, volunteer recruitment,
+          stakeholder engagement, communications, onboarding and
+          knowledge transfer.
+        </div>
+
+        <div class="techline">
+          <strong>Tools &amp; capabilities:</strong>
+          Digital communications, social media marketing, event coordination,
+          volunteer onboarding, documentation, stakeholder and
+          community engagement.
+        </div>
+      </div>
+    </details>
+
+    <!-- NJIT IT SUPPORT -->
+
+    <details class="experience experience-details">
+      <summary class="exp-summary">
+        <div class="exp-head">
+          <div>
+            <h3>IT Support Engineer</h3>
+            <div class="company">
+              <a href="https://ist.njit.edu/" target="_blank" rel="noopener noreferrer">
+                IST Service Desk, NJIT
+              </a> · Newark, New Jersey
+            </div>
+          </div>
+          <div class="date">Jun 2019 – Dec 2020</div>
+        </div>
+      </summary>
+
+      <div class="experience-content">
+        <ul>
+          <li>Provided frontline technical support to hundreds of students, faculty and staff by resolving approximately 10–30 support requests per week involving user accounts, software, VPN, email, network connectivity and system access.</li>
+          <li>Helped minimize operational disruptions by troubleshooting end-user technology issues and supporting reliable access to university systems and services.</li>
+        </ul>
+
+        <div class="techline competencyline">
+          <strong>Core competencies:</strong>
+          End-user support, incident triage, technical troubleshooting,
+          account access support, service delivery and user communication.
+        </div>
+
+        <div class="techline">
+          <strong>Technical skills:</strong>
+          IT service desk support, user account administration,
+          software troubleshooting, VPN, email, network connectivity,
+          system access, end-user support.
+        </div>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<!-- CERTIFICATIONS: ALWAYS VISIBLE BULLET LIST -->
+
+<section class="panel" id="certifications">
+  <h2>Certifications</h2>
+
+  <ul class="bullet-list">
+
+    <li>
+      <strong>Salesforce Certified Tableau Data Analyst</strong>
+      – Professional certification in Tableau analytics.
+      <a href="https://trailhead.salesforce.com/en/credentials/verification/"
+         target="_blank" rel="noopener noreferrer">
+        Salesforce credential verification portal ↗
+      </a>
+    </li>
+
+    <li>
+      <strong>AWS Certified Solutions Architect – Associate</strong>
+      – Cloud architecture certification.
+      <a href="https://aws.amazon.com/certification/certification-digital-badges/"
+         target="_blank" rel="noopener noreferrer">
+        AWS digital badge and verification information ↗
+      </a>
+    </li>
+
+    <li>
+      <strong>Generative AI Training – University of Nebraska at Omaha</strong>
+      – Generative AI training for faculty, staff and students;
+      trained as a teacher.
+      <a href="https://www.unomaha.edu/"
+         target="_blank" rel="noopener noreferrer">
+        University of Nebraska at Omaha ↗
+      </a>
+    </li>
+
+    <li>
+      <strong>Additional Professional Development</strong>
+      – Continuous learning through Coursera, LinkedIn Learning,
+      O’Reilly, Microsoft Learn and Salesforce Trailblazer.
+      <a href="https://www.coursera.org/"
+         target="_blank" rel="noopener noreferrer">Coursera</a> ·
+      <a href="https://www.linkedin.com/learning/"
+         target="_blank" rel="noopener noreferrer">LinkedIn Learning</a> ·
+      <a href="https://learn.microsoft.com/"
+         target="_blank" rel="noopener noreferrer">Microsoft Learn</a>
+    </li>
+
+  </ul>
+
+  <p class="muted" style="font-size:.88rem;margin-top:13px">
+    For individual credential validation, add your personal Salesforce
+    verification profile and AWS Credly badge URLs when available.
+    The links above lead to official verification guidance and portals,
+    not an individual credential record.
+  </p>
+</section>
+
+<!-- PROFESSIONAL ACTIVITIES & RECOGNITIONS: ALWAYS VISIBLE BULLET LIST -->
+
+<section class="panel" id="recognition">
+  <h2>Professional Activities &amp; Recognitions</h2>
+
+  <ul class="bullet-list">
+
+    <li>
+      <strong>ACM Digital Government (dg.o 2021):</strong>
+      Co-authored and presented a research paper and received
+      the Best Poster Award.
+    </li>
+
+    <li>
+      <strong>Higher Education Data Engagement (HEDW):</strong>
+      Ranked #6 among community participants for knowledge sharing
+      and engagement; active contributor to the Higher Ed Tableau
+      Users Group (HETUG).
+      <a href="https://www.hedw.org/"
+         target="_blank" rel="noopener noreferrer">
+        HEDW community ↗
+      </a>
+    </li>
+
+    <li>
+      <strong>UNO Spring AI Summit:</strong>
+      Represented the team as a presenter, sharing Artificial
+      Intelligence initiatives and projects.
+      <a href="https://www.unomaha.edu/"
+         target="_blank" rel="noopener noreferrer">
+        University of Nebraska at Omaha ↗
+      </a>
+    </li>
+
+    <li>
+      <strong>NJIT Graduate Recognition:</strong>
+      Recognized by faculty for leading applied machine learning
+      research and Women in Computing outreach; received a
+      competitive graduate award.
+      <a href="https://www.njit.edu/"
+         target="_blank" rel="noopener noreferrer">
+        NJIT ↗
+      </a>
+    </li>
+
+  </ul>
+</section>
+
+<!-- VOLUNTEER EXPERIENCE: EXPANDABLE -->
+
+<section class="panel" id="volunteer">
+  <details class="section-details">
+    <summary class="section-summary">
+      <h2>Volunteer Experience &amp; Community Engagement</h2>
+    </summary>
+
+    <div class="section-content">
+      <ul>
+        <li>
+          <strong>Nebraska Women in STEM:</strong>
+          Supported community events and contributed to the 2026 award
+          committee, with continued involvement planned for 2027.
+        </li>
+
+        <li>
+          <strong>Data Visualization Society, Big Brothers Big Sisters
+          and AnitaB.org:</strong>
+          Contributed to community learning through mentoring, teaching,
+          blog writing and committee participation.
+        </li>
+
+        <li>
+          <strong>UNO and Creighton University:</strong>
+          Participated in wellness committees and staff volunteer initiatives.
+        </li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<!-- CONTACT: STATIC HEADING -->
+
+<section class="panel" id="contact">
+  <h2>Let’s Connect</h2>
+
+  <div class="section-content">
+    <p>
+      I welcome conversations about my profile or your interest.
+    </p>
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <strong>Email Me</strong>
+        <a href="mailto:sirishabojjireddy12@gmail.com">
+          sirishabojjireddy12@gmail.com
+        </a>
+      </div>
+
+      <div class="contact-card">
+        <strong>LinkedIn</strong>
+        <a href="https://www.linkedin.com/in/sirishabojjireddy/"
+           target="_blank" rel="noopener noreferrer">
+          Connect with me
+        </a>
+      </div>
+
+      <div class="contact-card">
+        <strong>GitHub</strong>
+        <a href="https://github.com/sirishabojjireddy"
+           target="_blank" rel="noopener noreferrer">
+          View my repositories
+        </a>
+      </div>
+
+      <div class="contact-card">
+        <strong>Phone</strong>
+        <a href="tel:+917530040519">+91-7530040519</a>
+      </div>
+
+      <div class="contact-card">
+        <strong>Resume</strong>
+        <a href="Sirisha_Bojjireddy_Resume.pdf" download>
+          Download resume (PDF)
+        </a>
+      </div>
+
+      <div class="contact-card">
+        <strong>Location</strong>
+        India
+      </div>
+
+    </div>
+  </div>
+</section>
 
 </main>
+
+<!-- FOOTER -->
 
 <footer>
   © 2026 Sirisha Bojjireddy | Professional Portfolio
