@@ -1,1119 +1,1799 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Professional portfolio of Sirisha Bojjireddy, Senior Business Analyst specializing in business intelligence, data analytics, data science and responsible AI.">
-<meta name="theme-color" content="#102b49">
-<title>Sirisha Bojjireddy | Professional Portfolio</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --navy:#102b49;
-  --navy2:#173d60;
-  --teal:#08a9b7;
-  --teal-dark:#087d8c;
-  --ink:#24344a;
-  --muted:#617187;
-  --pale:#eaf4f8;
-  --line:#dce6ee;
-  --white:#fff;
-  --soft:#f7fafc;
-}
-
-* {
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html {
-  scroll-behavior:smooth;
-}
-
-body {
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
-  color:var(--ink);
-  background:#f5f8fb;
-  line-height:1.7;
-}
-
-a {
-  color:var(--teal-dark);
-  text-decoration:none;
-}
-
-a:hover {
-  text-decoration:underline;
-}
-
-.container {
-  width:min(1160px, calc(100% - 40px));
-  margin:0 auto;
-}
-
-/* HERO */
-
-.hero {
-  height:390px;
-  background:var(--navy);
-  color:var(--white);
-  overflow:hidden;
-}
-
-.hero-inner {
-  width:100%;
-  height:390px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:stretch;
-  gap:0;
-}
-
-.hero-content {
-  padding:35px 40px 35px max(40px,calc((100vw - 1160px) / 2));
-  align-self:center;
-  min-width:0;
-}
-
-.hero h1 {
-  font-size:clamp(30px,4vw,44px);
-  line-height:1.2;
-  font-weight:800;
-  margin-bottom:12px;
-  letter-spacing:-1.2px;
-}
-
-.hero-role {
-  color:#c8edf1;
-  font-size:16px;
-  font-weight:600;
-  margin-bottom:12px;
-}
-
-.hero-tagline {
-  color:#e3edf5;
-  font-size:15px;
-  margin-bottom:24px;
-}
-
-.hero-buttons {
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-.hero-buttons a {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:9px 15px;
-  border:1px solid rgba(255,255,255,.45);
-  border-radius:7px;
-  color:white;
-  font-size:12px;
-  font-weight:600;
-  transition:.2s ease;
-}
-
-.hero-buttons a:hover {
-  background:var(--teal);
-  border-color:var(--teal);
-  text-decoration:none;
-}
-
-.hero-image {
-  width:100%;
-  height:390px;
-  object-fit:cover;
-  object-position:55% 20%;
-  display:block;
-  border-radius:0;
-}
-
-/* NAVIGATION */
-
-.navbar {
-  background:white;
-  border-bottom:1px solid var(--line);
-  position:sticky;
-  top:0;
-  z-index:100;
-  box-shadow:0 3px 12px rgba(16,43,73,.04);
-}
-
-.nav-inner {
-  min-height:58px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:26px;
-  flex-wrap:wrap;
-  padding:10px 0;
-}
-
-.nav-inner a {
-  color:var(--navy);
-  font-size:12px;
-  font-weight:700;
-}
-
-.nav-inner a:hover {
-  color:var(--teal-dark);
-  text-decoration:none;
-}
-
-/* GENERAL SECTIONS */
-
-main {
-  padding:28px 0 45px;
-}
-
-.section {
-  background:white;
-  border:1px solid var(--line);
-  border-radius:12px;
-  padding:27px 30px;
-  margin-bottom:22px;
-  box-shadow:0 4px 16px rgba(16,43,73,.035);
-}
-
-.section-title {
-  color:var(--navy);
-  font-size:21px;
-  font-weight:800;
-  margin-bottom:17px;
-  letter-spacing:-.3px;
-}
-
-.section p {
-  color:var(--muted);
-  font-size:14px;
-  margin-bottom:12px;
-}
-
-.section p:last-child {
-  margin-bottom:0;
-}
-
-/* EDUCATION */
-
-.education-item {
-  padding:12px 0;
-  border-bottom:1px solid var(--line);
-}
-
-.education-item:last-child {
-  border-bottom:0;
-  padding-bottom:0;
-}
-
-.education-item strong {
-  color:var(--navy);
-  font-size:14px;
-}
-
-.education-item span {
-  display:block;
-  color:var(--muted);
-  font-size:13px;
-}
-
-/* CLICKABLE EXPANDABLE SECTION HEADERS */
-
-.expandable {
-  padding:0;
-  overflow:hidden;
-}
-
-.expandable summary {
-  list-style:none;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  padding:25px 30px;
-  color:var(--navy);
-  font-size:21px;
-  font-weight:800;
-  transition:background .2s ease;
-}
-
-.expandable summary::-webkit-details-marker {
-  display:none;
-}
-
-.expandable summary:hover {
-  background:#f7fbfd;
-}
-
-.expandable summary::after {
-  content:"+";
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex:0 0 30px;
-  width:30px;
-  height:30px;
-  border-radius:50%;
-  background:var(--pale);
-  color:var(--teal-dark);
-  font-size:22px;
-  font-weight:500;
-  line-height:1;
-}
-
-.expandable[open] summary::after {
-  content:"−";
-}
-
-.expandable-content {
-  padding:0 30px 27px;
-  border-top:1px solid #edf2f6;
-}
-
-/* PILL STYLING */
-
-.pill-group {
-  display:flex;
-  flex-wrap:wrap;
-  gap:9px;
-  margin:12px 0 20px;
-}
-
-.pill {
-  display:inline-flex;
-  align-items:center;
-  padding:7px 13px;
-  border-radius:30px;
-  background:#eaf4f8;
-  border:1px solid #d4e8ee;
-  color:#174b66;
-  font-size:12px;
-  font-weight:600;
-  line-height:1.45;
-  transition:all .2s ease;
-}
-
-.pill:hover {
-  background:#d9f0f2;
-  border-color:#a8dfe2;
-  color:var(--navy);
-}
-
-.pill-heading {
-  color:var(--navy);
-  font-size:14px;
-  font-weight:800;
-  margin:20px 0 7px;
-}
-
-.pill-heading:first-child {
-  margin-top:5px;
-}
-
-/* PROFESSIONAL EXPERIENCE */
-
-.experience-card {
-  border:1px solid var(--line);
-  border-radius:10px;
-  margin-bottom:14px;
-  overflow:hidden;
-  background:#fff;
-}
-
-.experience-card:last-child {
-  margin-bottom:0;
-}
-
-.experience-card summary {
-  list-style:none;
-  cursor:pointer;
-  padding:17px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  background:#fbfdfe;
-}
-
-.experience-card summary::-webkit-details-marker {
-  display:none;
-}
-
-.experience-card summary:hover {
-  background:#f1f8fa;
-}
-
-.experience-card summary::after {
-  content:"+";
-  color:var(--teal-dark);
-  font-size:23px;
-  font-weight:500;
-  flex-shrink:0;
-}
-
-.experience-card[open] summary::after {
-  content:"−";
-}
-
-.job-title {
-  color:var(--navy);
-  font-size:15px;
-  font-weight:800;
-}
-
-.job-company {
-  display:block;
-  color:var(--teal-dark);
-  font-size:13px;
-  font-weight:700;
-  margin-top:3px;
-}
-
-.job-meta {
-  display:block;
-  color:var(--muted);
-  font-size:12px;
-  margin-top:2px;
-}
-
-.experience-content {
-  padding:18px 21px 20px;
-  border-top:1px solid var(--line);
-}
-
-.experience-content ul {
-  padding-left:19px;
-  margin:8px 0 17px;
-}
-
-.experience-content li {
-  color:var(--muted);
-  font-size:13px;
-  margin-bottom:9px;
-  padding-left:3px;
-}
-
-.detail-label {
-  display:block;
-  color:var(--teal-dark);
-  font-size:13px;
-  font-weight:800;
-  letter-spacing:.2px;
-  margin:18px 0 7px;
-  padding-left:10px;
-  border-left:3px solid var(--teal);
-}
-
-.detail-label:first-child {
-  margin-top:0;
-}
-
-.experience-content .pill-group {
-  margin-top:8px;
-  margin-bottom:14px;
-}
-
-.experience-content .pill {
-  font-size:11px;
-  padding:6px 11px;
-}
-
-/* CERTIFICATIONS AND ACTIVITIES */
-
-.bullet-list {
-  padding-left:20px;
-}
-
-.bullet-list li {
-  color:var(--muted);
-  font-size:13px;
-  margin-bottom:11px;
-}
-
-.bullet-list li:last-child {
-  margin-bottom:0;
-}
-
-.bullet-list strong {
-  color:var(--navy);
-}
-
-/* CONTACT */
-
-.contact-grid {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:13px;
-}
-
-.contact-item {
-  padding:14px 16px;
-  border:1px solid var(--line);
-  border-radius:9px;
-  background:#fbfdfe;
-  min-width:0;
-}
-
-.contact-item strong {
-  display:block;
-  color:var(--navy);
-  font-size:12px;
-  margin-bottom:3px;
-}
-
-.contact-item a,
-.contact-item span {
-  font-size:13px;
-  overflow-wrap:anywhere;
-}
-
-/* FOOTER */
-
-footer {
-  background:var(--navy);
-  color:#dce8f1;
-  text-align:center;
-  padding:22px 15px;
-  font-size:12px;
-}
-
-footer a {
-  color:#8fe0e5;
-  font-weight:700;
-  margin-left:8px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:760px) {
-  .hero,
-  .hero-inner {
-    height:auto;
-    min-height:390px;
-  }
-
-  .hero-inner {
-    grid-template-columns:1fr;
-  }
-
-  .hero-content {
-    padding:35px 25px;
-    order:1;
-  }
-
-  .hero-image {
-    height:260px;
-    order:2;
-    object-position:center 20%;
-  }
-
-  .hero h1 {
-    font-size:32px;
-  }
-
-  .nav-inner {
-    gap:13px 18px;
-  }
-
-  .section {
-    padding:22px 20px;
-  }
-
-  .expandable summary {
-    padding:21px 20px;
-    font-size:19px;
-  }
-
-  .expandable-content {
-    padding:0 20px 22px;
-  }
-
-  .contact-grid {
-    grid-template-columns:1fr;
-  }
-}
-
-@media(max-width:480px) {
-  .hero-buttons a {
-    font-size:11px;
-    padding:8px 11px;
-  }
-
-  .hero-role {
-    font-size:14px;
-  }
-
-  .hero-tagline {
-    font-size:13px;
-  }
-
-  .section-title {
-    font-size:19px;
-  }
-
-  .experience-card summary {
-    padding:15px;
-  }
-
-  .experience-content {
-    padding:15px;
-  }
-}
-</style>
+  <!-- =====================================================
+       1. PAGE SETTINGS AND METADATA
+       ===================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Professional portfolio of Sirisha Bojjireddy, Senior Business Analyst specializing in business intelligence, data analytics, data science and responsible AI.">
+
+  <meta name="theme-color" content="#102b49">
+
+  <title>Sirisha Bojjireddy | Professional Portfolio</title>
+
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+  <!-- =====================================================
+       2. CSS STYLES
+       All website styling is maintained in this section.
+       ===================================================== -->
+
+  <style>
+
+    /* -----------------------------------------------------
+       2.1 COLOR PALETTE
+       Change these variables to update website colors globally.
+       ----------------------------------------------------- */
+
+    :root {
+      --navy: #102b49;
+      --navy2: #173d60;
+      --teal: #08a9b7;
+      --teal-dark: #087d8c;
+      --ink: #24344a;
+      --muted: #617187;
+      --pale: #eaf4f8;
+      --line: #dce6ee;
+      --white: #fff;
+      --soft: #f7fafc;
+    }
+
+
+    /* -----------------------------------------------------
+       2.2 GLOBAL PAGE STYLING
+       ----------------------------------------------------- */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui,
+                   -apple-system, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: #f5f8fb;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--teal-dark);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+
+    /* =====================================================
+       3. HERO / HEADER BANNER
+       Left: Name, professional title and buttons.
+       Right: Cover image.
+       ===================================================== */
+
+    .hero {
+      height: 390px;
+      background: var(--navy);
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      width: 100%;
+      height: 390px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+      gap: 0;
+    }
+
+    /* Header text and buttons */
+
+    .hero-content {
+      padding: 35px 40px 35px max(40px, calc((100vw - 1160px) / 2));
+      align-self: center;
+      min-width: 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.2;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -1.2px;
+    }
+
+    .hero-role {
+      color: #c8edf1;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .hero-tagline {
+      color: #e3edf5;
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+
+    /* Header action buttons */
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-buttons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 15px;
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 7px;
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      transition: .2s ease;
+    }
+
+    .hero-buttons a:hover {
+      background: var(--teal);
+      border-color: var(--teal);
+      text-decoration: none;
+    }
+
+    /* Location displayed below the header buttons */
+
+    .hero-location {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #dcecf3;
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 13px;
+    }
+
+    /* -----------------------------------------------------
+       HERO IMAGE POSITIONING
+
+       object-fit: cover fills the available image container.
+       object-position controls which part of the original
+       image is visible when cropping is necessary.
+
+       Horizontal value: left / center / right positioning.
+       Vertical value: top / center / bottom positioning.
+
+       Current preferred crop: center 20%.
+       ----------------------------------------------------- */
+
+    .hero-image {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+      border-radius: 0;
+    }
+
+
+    /* =====================================================
+       4. NAVIGATION BAR
+       Sticky navigation remains visible while scrolling.
+       ===================================================== */
+
+    .navbar {
+      background: white;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 3px 12px rgba(16,43,73,.04);
+    }
+
+    .nav-inner {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 26px;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    .nav-inner a {
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .nav-inner a:hover {
+      color: var(--teal-dark);
+      text-decoration: none;
+    }
+
+
+    /* =====================================================
+       5. GENERAL CONTENT SECTIONS
+       Used for About, Education, Certifications, etc.
+       ===================================================== */
+
+    main {
+      padding: 28px 0 45px;
+    }
+
+    .section {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 27px 30px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 16px rgba(16,43,73,.035);
+    }
+
+    .section-title {
+      color: var(--navy);
+      font-size: 21px;
+      font-weight: 800;
+      margin-bottom: 17px;
+      letter-spacing: -.3px;
+    }
+
+    .section p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    /* =====================================================
+       6. EDUCATION SECTION
+       ===================================================== */
+
+    .education-item {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .education-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .education-item strong {
+      color: var(--navy);
+      font-size: 14px;
+    }
+
+    .education-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+
+    /* =====================================================
+       7. EXPANDABLE SECTIONS
+       Used for:
+       - Core Competencies
+       - Technical Skills
+       - Volunteer Experience
+
+       The entire heading is clickable.
+       + means collapsed; − means expanded.
+       ===================================================== */
+
+    .expandable {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .expandable summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 25px 30px;
+      color: var(--navy);
+      font-size: 21px;
+      font-weight: 800;
+      transition: background .2s ease;
+    }
+
+    /* Hide the browser's default disclosure arrow */
+
+    .expandable summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .expandable summary:hover {
+      background: #f7fbfd;
+    }
+
+    /* Automatically display + when section is closed */
+
+    .expandable summary::after {
+      content: "+";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 30px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--pale);
+      color: var(--teal-dark);
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    /* Automatically display − when section is open */
+
+    .expandable[open] summary::after {
+      content: "−";
+    }
+
+    .expandable-content {
+      padding: 0 30px 27px;
+      border-top: 1px solid #edf2f6;
+    }
+
+
+    /* =====================================================
+       8. PILL DESIGN
+       Used in Core Competencies and Technical Skills.
+       Also used for skills inside professional experience.
+       ===================================================== */
+
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 12px 0 20px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 13px;
+      border-radius: 30px;
+      background: #eaf4f8;
+      border: 1px solid #d4e8ee;
+      color: #174b66;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.45;
+      transition: all .2s ease;
+    }
+
+    /* Subtle hover effect on skill pills */
+
+    .pill:hover {
+      background: #d9f0f2;
+      border-color: #a8dfe2;
+      color: var(--navy);
+    }
+
+    /* Category headings within the expandable sections */
+
+    .pill-heading {
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+      margin: 20px 0 7px;
+    }
+
+    .pill-heading:first-child {
+      margin-top: 5px;
+    }
+
+
+    /* =====================================================
+       9. PROFESSIONAL EXPERIENCE
+       Each job is independently expandable.
+       ===================================================== */
+
+    .experience-card {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      margin-bottom: 14px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .experience-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .experience-card summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 17px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      background: #fbfdfe;
+    }
+
+    .experience-card summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .experience-card summary:hover {
+      background: #f1f8fa;
+    }
+
+    /* + / − indicator for each job */
+
+    .experience-card summary::after {
+      content: "+";
+      color: var(--teal-dark);
+      font-size: 23px;
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+
+    .experience-card[open] summary::after {
+      content: "−";
+    }
+
+    .job-title {
+      color: var(--navy);
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .job-company {
+      display: block;
+      color: var(--teal-dark);
+      font-size: 13px;
+      font-weight: 700;
+      margin-top: 3px;
+    }
+
+    .job-meta {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .experience-content {
+      padding: 18px 21px 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .experience-content ul {
+      padding-left: 19px;
+      margin: 8px 0 17px;
+    }
+
+    .experience-content li {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 9px;
+      padding-left: 3px;
+    }
+
+    /* -----------------------------------------------------
+       CORE COMPETENCIES AND TECHNICAL SKILLS LABELS
+       Inside each professional experience.
+       ----------------------------------------------------- */
+
+    .detail-label {
+      display: block;
+      color: var(--teal-dark);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .2px;
+      margin: 18px 0 7px;
+      padding-left: 10px;
+      border-left: 3px solid var(--teal);
+    }
+
+    .detail-label:first-child {
+      margin-top: 0;
+    }
+
+    .experience-content .pill-group {
+      margin-top: 8px;
+      margin-bottom: 14px;
+    }
+
+    .experience-content .pill {
+      font-size: 11px;
+      padding: 6px 11px;
+    }
+
+
+    /* =====================================================
+       10. CERTIFICATIONS AND PROFESSIONAL RECOGNITIONS
+       ===================================================== */
+
+    .bullet-list {
+      padding-left: 20px;
+    }
+
+    .bullet-list li {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 11px;
+    }
+
+    .bullet-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .bullet-list strong {
+      color: var(--navy);
+    }
+
+
+    /* =====================================================
+       11. LET'S CONNECT
+       Location is intentionally not included here.
+       ===================================================== */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+    }
+
+    .contact-item {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: #fbfdfe;
+      min-width: 0;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--navy);
+      font-size: 12px;
+      margin-bottom: 3px;
+    }
+
+    .contact-item a {
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+       12. FOOTER
+       ===================================================== */
+
+    footer {
+      background: var(--navy);
+      color: #dce8f1;
+      text-align: center;
+      padding: 22px 15px;
+      font-size: 12px;
+    }
+
+    footer a {
+      color: #8fe0e5;
+      font-weight: 700;
+      margin-left: 8px;
+    }
+
+
+    /* =====================================================
+       13. RESPONSIVE DESIGN - TABLETS AND MOBILE
+       ===================================================== */
+
+    @media(max-width: 760px) {
+
+      /* Stack hero text and image on smaller screens */
+
+      .hero,
+      .hero-inner {
+        height: auto;
+        min-height: 390px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content {
+        padding: 35px 25px;
+        order: 1;
+      }
+
+      .hero-image {
+        height: 260px;
+        order: 2;
+        object-position: center 20%;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .nav-inner {
+        gap: 13px 18px;
+      }
+
+      .section {
+        padding: 22px 20px;
+      }
+
+      .expandable summary {
+        padding: 21px 20px;
+        font-size: 19px;
+      }
+
+      .expandable-content {
+        padding: 0 20px 22px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    /* Smaller mobile screens */
+
+    @media(max-width: 480px) {
+
+      .hero-buttons a {
+        font-size: 11px;
+        padding: 8px 11px;
+      }
+
+      .hero-role {
+        font-size: 14px;
+      }
+
+      .hero-tagline {
+        font-size: 13px;
+      }
+
+      .section-title {
+        font-size: 19px;
+      }
+
+      .experience-card summary {
+        padding: 15px;
+      }
+
+      .experience-content {
+        padding: 15px;
+      }
+    }
+
+  </style>
 </head>
+
 
 <body>
 
-<header class="hero" id="top">
-  <div class="hero-inner">
-    <div class="hero-content">
-      <h1>Sirisha Bojjireddy</h1>
-      <div class="hero-role">Senior Business Analyst | Business Intelligence | Data Analytics | Data Science</div>
-      <p class="hero-tagline">Turning complex data into meaningful business decisions.</p>
+  <!-- =====================================================
+       14. HERO HEADER
+       Update your name, role, tagline and contact buttons here.
+       Keep cover-banner.png in the repository root.
+       ===================================================== -->
 
-      <div class="hero-buttons">
-        <a href="mailto:sirishabojjireddy12@gmail.com">Email Me</a>
-        <a href="tel:+917530040519">Phone</a>
-        <a href="https://www.linkedin.com/in/sirishabojjireddy/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/sirishabojjireddy" target="_blank" rel="noopener">GitHub</a>
-        <a href="Sirisha_Bojjireddy_Resume.pdf" target="_blank">Download Resume</a>
+  <header class="hero" id="top">
+
+    <div class="hero-inner">
+
+      <!-- Left side: professional introduction -->
+
+      <div class="hero-content">
+
+        <h1>Sirisha Bojjireddy</h1>
+
+        <div class="hero-role">
+          Senior Business Analyst | Business Intelligence |
+          Data Analytics | Data Science
+        </div>
+
+        <p class="hero-tagline">
+          Turning complex data into meaningful business decisions.
+        </p>
+
+        <!-- Contact and portfolio buttons -->
+
+        <div class="hero-buttons">
+
+          <a href="mailto:sirishabojjireddy12@gmail.com">
+            Email Me
+          </a>
+
+          <a href="tel:+917530040519">
+            Phone
+          </a>
+
+          <a href="https://www.linkedin.com/in/sirishabojjireddy/"
+             target="_blank" rel="noopener">
+            LinkedIn
+          </a>
+
+          <a href="https://github.com/sirishabojjireddy"
+             target="_blank" rel="noopener">
+            GitHub
+          </a>
+
+          <!-- Resume PDF must be in the repository root -->
+
+          <a href="Sirisha_Bojjireddy_Resume.pdf" target="_blank">
+            Download Resume
+          </a>
+
+        </div>
+
+        <!-- Location displayed below all header buttons -->
+
+        <div class="hero-location">
+          <span aria-hidden="true">📍</span>
+          <span>India</span>
+        </div>
+
       </div>
+
+
+      <!-- Right side: cover image -->
+
+      <img
+        src="cover-banner.png"
+        class="hero-image"
+        alt="Professional portfolio banner">
+
     </div>
+  </header>
 
-    <img src="cover-banner.png" class="hero-image" alt="Professional portfolio banner">
-  </div>
-</header>
 
-<nav class="navbar">
-  <div class="container nav-inner">
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#competencies">Core Competencies</a>
-    <a href="#technical-skills">Technical Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#activities">Recognitions</a>
-    <a href="#volunteer">Volunteer</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+  <!-- =====================================================
+       15. NAVIGATION BAR
+       Each link takes the visitor to the corresponding section.
+       ===================================================== -->
 
-<main class="container">
+  <nav class="navbar">
 
-  <!-- ABOUT ME -->
-  <section class="section" id="about">
-    <h2 class="section-title">About Me</h2>
-    <p>Senior Business Analyst with 7+ years of professional experience translating business requirements into data-driven BI solutions across insurance, healthcare, research and higher education.</p>
-    <p>I specialize in stakeholder management, requirements gathering, business intelligence, SQL, data quality, governance, automation, UAT, Agile delivery and process improvement. I have also adopted responsible AI practices to help teams explore emerging technologies with purpose.</p>
-  </section>
+    <div class="container nav-inner">
 
-  <!-- EDUCATION -->
-  <section class="section" id="education">
-    <h2 class="section-title">Education</h2>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#competencies">Core Competencies</a>
+      <a href="#technical-skills">Technical Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#activities">Recognitions</a>
+      <a href="#volunteer">Volunteer</a>
+      <a href="#contact">Contact</a>
 
-    <div class="education-item">
-      <strong>MBA</strong>
-      <span>University of Nebraska at Omaha (UNO), Omaha, Nebraska — In Progress</span>
     </div>
+  </nav>
 
-    <div class="education-item">
-      <strong>M.S. Data Science</strong>
-      <span>New Jersey Institute of Technology (NJIT), Newark, New Jersey — December 2020</span>
-    </div>
 
-    <div class="education-item">
-      <strong>B.E. Electronics &amp; Communication</strong>
-      <span>Anna University, Chennai, India — August 2016</span>
-    </div>
-  </section>
+  <!-- =====================================================
+       16. MAIN WEBSITE CONTENT
+       ===================================================== -->
 
-  <!-- CORE COMPETENCIES: CLICK HEADER TO EXPAND -->
-  <details class="section expandable" id="competencies">
-    <summary>Core Competencies</summary>
-    <div class="expandable-content">
+  <main class="container">
 
-      <h3 class="pill-heading">Business Analysis</h3>
-      <div class="pill-group">
-        <span class="pill">Requirements Gathering</span>
-        <span class="pill">BRD / FRD</span>
-        <span class="pill">Stakeholder Management</span>
-        <span class="pill">Business Process Analysis</span>
-        <span class="pill">Gap Analysis</span>
-        <span class="pill">Process Improvement</span>
-        <span class="pill">Process Mapping</span>
-        <span class="pill">Use Cases</span>
-      </div>
 
-      <h3 class="pill-heading">Business Intelligence &amp; Analytics</h3>
-      <div class="pill-group">
-        <span class="pill">Dashboard Development</span>
-        <span class="pill">Data Visualization</span>
-        <span class="pill">Descriptive Analytics</span>
-        <span class="pill">KPI Reporting</span>
-        <span class="pill">Data Modeling</span>
-      </div>
+    <!-- -----------------------------------------------------
+         ABOUT ME
+         Always visible.
+         ----------------------------------------------------- -->
 
-      <h3 class="pill-heading">Data Governance</h3>
-      <div class="pill-group">
-        <span class="pill">Data Quality</span>
-        <span class="pill">Metadata Management</span>
-        <span class="pill">Data Catalog</span>
-        <span class="pill">Report Catalog</span>
-        <span class="pill">Data Dictionary</span>
-        <span class="pill">Data Mapping</span>
-        <span class="pill">Data Lineage</span>
-      </div>
+    <section class="section" id="about">
 
-      <h3 class="pill-heading">AI, Data Science &amp; Automation</h3>
-      <div class="pill-group">
-        <span class="pill">Generative AI</span>
-        <span class="pill">ChatGPT</span>
-        <span class="pill">Claude</span>
-        <span class="pill">Microsoft Copilot</span>
-        <span class="pill">Google Gemini</span>
-        <span class="pill">Prompt Engineering</span>
-        <span class="pill">NLP</span>
-        <span class="pill">LLMs</span>
-        <span class="pill">Predictive Modeling</span>
-        <span class="pill">Machine Learning</span>
-        <span class="pill">Deep Learning</span>
-        <span class="pill">Neural Networks</span>
-      </div>
+      <h2 class="section-title">About Me</h2>
 
-      <h3 class="pill-heading">Project Delivery</h3>
-      <div class="pill-group">
-        <span class="pill">User Stories</span>
-        <span class="pill">UAT</span>
-        <span class="pill">Agile</span>
-        <span class="pill">Scrum</span>
-        <span class="pill">Backlog Management</span>
-      </div>
+      <p>
+        Senior Business Analyst with 7+ years of professional
+        experience translating business requirements into
+        data-driven BI solutions across insurance, healthcare,
+        research and higher education.
+      </p>
 
-      <h3 class="pill-heading">Collaboration &amp; Leadership</h3>
-      <div class="pill-group">
-        <span class="pill">Mentoring</span>
-        <span class="pill">Cross-functional Collaboration</span>
-        <span class="pill">Facilitation</span>
-        <span class="pill">Knowledge Sharing</span>
-        <span class="pill">Continuous Improvement</span>
-      </div>
-    </div>
-  </details>
+      <p>
+        I specialize in stakeholder management, requirements
+        gathering, business intelligence, SQL, data quality,
+        governance, automation, UAT, Agile delivery and process
+        improvement. I have also adopted responsible AI practices
+        to help teams explore emerging technologies with purpose.
+      </p>
 
-  <!-- TECHNICAL SKILLS: CLICK HEADER TO EXPAND -->
-  <details class="section expandable" id="technical-skills">
-    <summary>Technical Skills</summary>
-    <div class="expandable-content">
+    </section>
 
-      <h3 class="pill-heading">BI &amp; Reporting</h3>
-      <div class="pill-group">
-        <span class="pill">Power BI</span>
-        <span class="pill">DAX</span>
-        <span class="pill">Power Query</span>
-        <span class="pill">Power BI Report Builder</span>
-        <span class="pill">Tableau Desktop</span>
-        <span class="pill">Tableau Prep</span>
-        <span class="pill">Tableau Flows</span>
-        <span class="pill">SSRS</span>
-        <span class="pill">Qlik</span>
-        <span class="pill">Cognos Analytics</span>
-        <span class="pill">MicroStrategy</span>
-        <span class="pill">SAP BusinessObjects</span>
-        <span class="pill">WebFOCUS</span>
-      </div>
 
-      <h3 class="pill-heading">Data &amp; ETL</h3>
-      <div class="pill-group">
-        <span class="pill">SQL</span>
-        <span class="pill">Python</span>
-        <span class="pill">R</span>
-        <span class="pill">SSIS</span>
-        <span class="pill">Informatica PowerCenter</span>
-        <span class="pill">Talend</span>
-      </div>
+    <!-- -----------------------------------------------------
+         EDUCATION
+         Always visible.
+         ----------------------------------------------------- -->
 
-      <h3 class="pill-heading">Application, Big Data &amp; Cloud</h3>
-      <div class="pill-group">
-        <span class="pill">Apache Spark SQL</span>
-        <span class="pill">AWS</span>
-        <span class="pill">Azure</span>
-        <span class="pill">GCP</span>
-        <span class="pill">Python Flask</span>
-        <span class="pill">Docker</span>
-        <span class="pill">REST APIs</span>
-        <span class="pill">ShinyApps</span>
-      </div>
+    <section class="section" id="education">
 
-      <h3 class="pill-heading">Project &amp; Productivity Tools</h3>
-      <div class="pill-group">
-        <span class="pill">Jira</span>
-        <span class="pill">Azure DevOps</span>
-        <span class="pill">Smartsheet</span>
-        <span class="pill">Visio</span>
-        <span class="pill">Excel</span>
-        <span class="pill">PowerPoint</span>
-        <span class="pill">RapidMiner</span>
-        <span class="pill">Minitab</span>
-        <span class="pill">SAS JMP</span>
-      </div>
+      <h2 class="section-title">Education</h2>
 
-      <h3 class="pill-heading">Enterprise Systems &amp; Platforms</h3>
-      <div class="pill-group">
-        <span class="pill">PeopleSoft</span>
-        <span class="pill">Blackbaud Raiser’s Edge</span>
-        <span class="pill">Ellucian Advance</span>
-        <span class="pill">Salesforce</span>
-        <span class="pill">Data Cookbook</span>
-        <span class="pill">OpenMetadata</span>
-        <span class="pill">Secoda</span>
-        <span class="pill">Microsoft Purview</span>
-        <span class="pill">Git</span>
-        <span class="pill">GitHub</span>
-        <span class="pill">GitLab</span>
-      </div>
-    </div>
-  </details>
-
-  <!-- PROFESSIONAL EXPERIENCE -->
-  <section class="section" id="experience">
-    <h2 class="section-title">Professional Experience</h2>
-
-    <details class="experience-card">
-      <summary>
+      <div class="education-item">
+        <strong>MBA</strong>
         <span>
-          <span class="job-title">Senior Business Analyst (BI Analyst)</span>
-          <span class="job-company">University of Nebraska at Omaha (UNO) | Omaha, Nebraska</span>
-          <span class="job-meta">April 2024 – September 2026</span>
+          University of Nebraska at Omaha (UNO),
+          Omaha, Nebraska — In Progress
         </span>
-      </summary>
-      <div class="experience-content">
-        <ul>
-          <li>Led requirements gathering and UAT with stakeholders and customers, delivering self-service Power BI/Tableau dashboards for acquisition, retention and outcome KPIs—including graduation, enrollment and student success—to support strategic decision-making.</li>
-          <li>Established data governance and documentation standards through metadata dashboards, report catalogs and data dictionaries, reducing reliance on third-party tools and improving transparency, consistency and maintainability.</li>
-          <li>Built Salesforce CRM and PeopleSoft ERP reporting and cross-system reconciliation dashboards, automating validation and auditing with approximately 85% improvement in process efficiency and saving up to four hours per reporting cycle.</li>
-          <li>Modernized BI delivery through Agile, Git version control, SQL standards and optimization, templates, code reviews and Jira boards.</li>
-          <li>Led a Generative AI project, mentored colleagues on responsible AI, and guided interns on predictive modeling and Salesforce projects supporting IESS.</li>
-        </ul>
+      </div>
 
-        <span class="detail-label">Core Competencies</span>
+      <div class="education-item">
+        <strong>M.S. Data Science</strong>
+        <span>
+          New Jersey Institute of Technology (NJIT),
+          Newark, New Jersey — December 2020
+        </span>
+      </div>
+
+      <div class="education-item">
+        <strong>B.E. Electronics &amp; Communication</strong>
+        <span>
+          Anna University, Chennai, India — August 2016
+        </span>
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         17. CORE COMPETENCIES
+         The heading itself is clickable.
+         Skills are displayed as rounded pills.
+         ===================================================== -->
+
+    <details class="section expandable" id="competencies">
+
+      <summary>Core Competencies</summary>
+
+      <div class="expandable-content">
+
+        <h3 class="pill-heading">Business Analysis</h3>
+
         <div class="pill-group">
-          <span class="pill">Business Analysis</span>
           <span class="pill">Requirements Gathering</span>
+          <span class="pill">BRD / FRD</span>
           <span class="pill">Stakeholder Management</span>
-          <span class="pill">BI &amp; Analytics</span>
-          <span class="pill">Data Governance</span>
-          <span class="pill">Process Automation</span>
-          <span class="pill">Agile Delivery</span>
-          <span class="pill">UAT</span>
-          <span class="pill">Responsible AI</span>
-          <span class="pill">Mentoring</span>
-        </div>
-
-        <span class="detail-label">Technical Skills</span>
-        <div class="pill-group">
-          <span class="pill">Power BI</span>
-          <span class="pill">Tableau</span>
-          <span class="pill">SQL</span>
-          <span class="pill">Salesforce</span>
-          <span class="pill">PeopleSoft</span>
-          <span class="pill">Git</span>
-          <span class="pill">GitHub</span>
-          <span class="pill">Jira</span>
-          <span class="pill">Generative AI</span>
-          <span class="pill">Predictive Modeling</span>
-        </div>
-      </div>
-    </details>
-
-    <details class="experience-card">
-      <summary>
-        <span>
-          <span class="job-title">Senior Business Analyst (Reporting &amp; BI Analyst)</span>
-          <span class="job-company">Creighton University | Omaha, Nebraska</span>
-          <span class="job-meta">February 2021 – February 2024</span>
-        </span>
-      </summary>
-      <div class="experience-content">
-        <ul>
-          <li>Partnered with senior leadership and cross-functional stakeholders to translate requirements into Power BI, Tableau and SSRS solutions using CRM data from Advance and Blackbaud, supporting revenue, performance and engagement reporting.</li>
-          <li>Developed CRM-based segmentation and Power BI dashboards for performance and KPIs, contributing to more than $500K raised from 2,300+ donors.</li>
-          <li>Optimized SQL queries, reducing execution time by 75%; enhanced data quality checks, improving operational efficiency by 95%.</li>
-          <li>Established data governance through data dictionaries, process documentation, data models, report catalogs and metadata assets, laying the foundation for enterprise Salesforce CRM.</li>
-        </ul>
-
-        <span class="detail-label">Core Competencies</span>
-        <div class="pill-group">
-          <span class="pill">Business Analysis</span>
-          <span class="pill">Stakeholder Engagement</span>
-          <span class="pill">Requirements Translation</span>
-          <span class="pill">Dashboard Development</span>
-          <span class="pill">Data Segmentation</span>
-          <span class="pill">Data Quality</span>
-          <span class="pill">Data Governance</span>
+          <span class="pill">Business Process Analysis</span>
+          <span class="pill">Gap Analysis</span>
           <span class="pill">Process Improvement</span>
+          <span class="pill">Process Mapping</span>
+          <span class="pill">Use Cases</span>
         </div>
 
-        <span class="detail-label">Technical Skills</span>
+
+        <h3 class="pill-heading">Business Intelligence &amp; Analytics</h3>
+
         <div class="pill-group">
-          <span class="pill">Power BI</span>
-          <span class="pill">Tableau</span>
-          <span class="pill">SSRS</span>
-          <span class="pill">SQL</span>
-          <span class="pill">Blackbaud</span>
-          <span class="pill">Ellucian Advance</span>
-          <span class="pill">Salesforce</span>
+          <span class="pill">Dashboard Development</span>
+          <span class="pill">Data Visualization</span>
+          <span class="pill">Descriptive Analytics</span>
+          <span class="pill">KPI Reporting</span>
           <span class="pill">Data Modeling</span>
         </div>
+
+
+        <h3 class="pill-heading">Data Governance</h3>
+
+        <div class="pill-group">
+          <span class="pill">Data Quality</span>
+          <span class="pill">Metadata Management</span>
+          <span class="pill">Data Catalog</span>
+          <span class="pill">Report Catalog</span>
+          <span class="pill">Data Dictionary</span>
+          <span class="pill">Data Mapping</span>
+          <span class="pill">Data Lineage</span>
+        </div>
+
+
+        <h3 class="pill-heading">AI, Data Science &amp; Automation</h3>
+
+        <div class="pill-group">
+          <span class="pill">Generative AI</span>
+          <span class="pill">ChatGPT</span>
+          <span class="pill">Claude</span>
+          <span class="pill">Microsoft Copilot</span>
+          <span class="pill">Google Gemini</span>
+          <span class="pill">Prompt Engineering</span>
+          <span class="pill">NLP</span>
+          <span class="pill">LLMs</span>
+          <span class="pill">Predictive Modeling</span>
+          <span class="pill">Machine Learning</span>
+          <span class="pill">Deep Learning</span>
+          <span class="pill">Neural Networks</span>
+        </div>
+
+
+        <h3 class="pill-heading">Project Delivery</h3>
+
+        <div class="pill-group">
+          <span class="pill">User Stories</span>
+          <span class="pill">UAT</span>
+          <span class="pill">Agile</span>
+          <span class="pill">Scrum</span>
+          <span class="pill">Backlog Management</span>
+        </div>
+
+
+        <h3 class="pill-heading">Collaboration &amp; Leadership</h3>
+
+        <div class="pill-group">
+          <span class="pill">Mentoring</span>
+          <span class="pill">Cross-functional Collaboration</span>
+          <span class="pill">Facilitation</span>
+          <span class="pill">Knowledge Sharing</span>
+          <span class="pill">Continuous Improvement</span>
+        </div>
+
       </div>
     </details>
 
-    <details class="experience-card">
-      <summary>
-        <span>
-          <span class="job-title">Business Analyst (Data Analyst / BI Analyst / Data Engineer)</span>
-          <span class="job-company">Larsen &amp; Toubro Infotech (LTI)</span>
-          <span class="job-meta">October 2016 – December 2018</span>
-        </span>
-      </summary>
-      <div class="experience-content">
-        <ul>
-          <li>Developed SSRS reports and Qlik dashboards for insurance claims, bonds, liabilities, fraud trends and business KPIs.</li>
-          <li>Automated ETL and manual reporting processes using SSIS and Informatica, eliminating approximately 90 hours of manual effort.</li>
-          <li>Optimized SQL queries, stored procedures, views and database processes, reducing report load time by 75%.</li>
-          <li>Worked with cross-functional teams on production troubleshooting, report validation and issue resolution.</li>
-          <li>Analyzed claims and policyholder data to identify fraud patterns, customer lifetime value and premium pricing insights.</li>
-        </ul>
 
-        <span class="detail-label">Core Competencies</span>
-        <div class="pill-group">
-          <span class="pill">Business Analysis</span>
-          <span class="pill">Insurance Analytics</span>
-          <span class="pill">Claims Analysis</span>
-          <span class="pill">Fraud Analysis</span>
-          <span class="pill">Process Automation</span>
-          <span class="pill">Data Analysis</span>
-          <span class="pill">Production Support</span>
-        </div>
+    <!-- =====================================================
+         18. TECHNICAL SKILLS
+         The heading itself is clickable.
+         Technical skills are organized into pill categories.
+         ===================================================== -->
 
-        <span class="detail-label">Technical Skills</span>
+    <details class="section expandable" id="technical-skills">
+
+      <summary>Technical Skills</summary>
+
+      <div class="expandable-content">
+
+        <h3 class="pill-heading">BI &amp; Reporting</h3>
+
         <div class="pill-group">
-          <span class="pill">SQL</span>
+          <span class="pill">Power BI</span>
+          <span class="pill">DAX</span>
+          <span class="pill">Power Query</span>
+          <span class="pill">Power BI Report Builder</span>
+          <span class="pill">Tableau Desktop</span>
+          <span class="pill">Tableau Prep</span>
+          <span class="pill">Tableau Flows</span>
           <span class="pill">SSRS</span>
           <span class="pill">Qlik</span>
+          <span class="pill">Cognos Analytics</span>
+          <span class="pill">MicroStrategy</span>
+          <span class="pill">SAP BusinessObjects</span>
+          <span class="pill">WebFOCUS</span>
+        </div>
+
+
+        <h3 class="pill-heading">Data &amp; ETL</h3>
+
+        <div class="pill-group">
+          <span class="pill">SQL</span>
+          <span class="pill">Python</span>
+          <span class="pill">R</span>
           <span class="pill">SSIS</span>
-          <span class="pill">Informatica</span>
-          <span class="pill">ETL</span>
-          <span class="pill">Database Optimization</span>
+          <span class="pill">Informatica PowerCenter</span>
+          <span class="pill">Talend</span>
         </div>
-      </div>
-    </details>
-  </section>
 
-  <!-- ADDITIONAL PROFESSIONAL EXPERIENCE -->
-  <section class="section" id="additional-experience">
-    <h2 class="section-title">Additional Professional Experience</h2>
 
-    <details class="experience-card">
-      <summary>
-        <span>
-          <span class="job-title">Data Scientist Intern</span>
-          <span class="job-company">Nest Global Solutions</span>
-          <span class="job-meta">September 2020 – December 2020</span>
-        </span>
-      </summary>
-      <div class="experience-content">
-        <ul>
-          <li>Applied machine learning and NLP techniques to develop a healthcare information retrieval chatbot and search engine.</li>
-          <li>Developed sentiment models achieving up to 83% text classification accuracy and 80% sentiment analysis performance.</li>
-          <li>Built end-to-end data pipelines, exploratory analysis and automated data preparation workflows.</li>
-          <li>Worked with AWS pipelines and semantic search APIs.</li>
-        </ul>
-        <span class="detail-label">Core Competencies</span>
+        <h3 class="pill-heading">Application, Big Data &amp; Cloud</h3>
+
         <div class="pill-group">
-          <span class="pill">Machine Learning</span>
-          <span class="pill">NLP</span>
-          <span class="pill">Sentiment Analysis</span>
-          <span class="pill">Data Pipelines</span>
-          <span class="pill">Healthcare Analytics</span>
-        </div>
-        <span class="detail-label">Technical Skills</span>
-        <div class="pill-group">
-          <span class="pill">Python</span>
+          <span class="pill">Apache Spark SQL</span>
           <span class="pill">AWS</span>
-          <span class="pill">NLP</span>
-          <span class="pill">Machine Learning</span>
-          <span class="pill">Semantic Search APIs</span>
-        </div>
-      </div>
-    </details>
-
-    <details class="experience-card">
-      <summary>
-        <span>
-          <span class="job-title">Research Assistant</span>
-          <span class="job-company">New Jersey Institute of Technology (NJIT)</span>
-          <span class="job-meta">November 2019 – December 2020 | Professors Dr. James Geller &amp; Dr. Soon Ae Chun</span>
-        </span>
-      </summary>
-      <div class="experience-content">
-        <ul>
-          <li>Conducted Python-based web scraping, exploratory data analysis, data mining and preprocessing for social media and misinformation research.</li>
-          <li>Applied named entity recognition and sentiment analysis techniques to research datasets.</li>
-          <li>Developed a Flask-based fake news detection application using NLP, Docker and cloud technologies.</li>
-          <li>Improved model accuracy from 95% to 97% through feature engineering and model optimization.</li>
-          <li>Co-authored and presented research at ACM dg.o 2021 and received a Best Poster Award.</li>
-        </ul>
-        <span class="detail-label">Core Competencies</span>
-        <div class="pill-group">
-          <span class="pill">Applied Research</span>
-          <span class="pill">Data Mining</span>
-          <span class="pill">NLP</span>
-          <span class="pill">Machine Learning</span>
-          <span class="pill">Research Communication</span>
-        </div>
-        <span class="detail-label">Technical Skills</span>
-        <div class="pill-group">
-          <span class="pill">Python</span>
-          <span class="pill">Flask</span>
+          <span class="pill">Azure</span>
+          <span class="pill">GCP</span>
+          <span class="pill">Python Flask</span>
           <span class="pill">Docker</span>
-          <span class="pill">NLP</span>
-          <span class="pill">Web Scraping</span>
-          <span class="pill">Cloud Technologies</span>
+          <span class="pill">REST APIs</span>
+          <span class="pill">ShinyApps</span>
         </div>
-      </div>
-    </details>
 
-    <details class="experience-card">
-      <summary>
-        <span>
-          <span class="job-title">Outreach Assistant</span>
-          <span class="job-company">NJIT Graduate Women in Computing Society (GWiCS)</span>
-          <span class="job-meta">October 2019 – December 2020</span>
-        </span>
-      </summary>
-      <div class="experience-content">
-        <ul>
-          <li>Supported STEM events, workshops and guest speaker programs involving faculty, alumni, public schools and community partners.</li>
-          <li>Coordinated volunteer recruitment, onboarding, succession planning and knowledge sharing.</li>
-          <li>Supported digital communications and outreach initiatives to increase participation and engagement.</li>
-        </ul>
-        <span class="detail-label">Core Competencies</span>
+
+        <h3 class="pill-heading">Project &amp; Productivity Tools</h3>
+
         <div class="pill-group">
-          <span class="pill">Community Engagement</span>
-          <span class="pill">Event Coordination</span>
-          <span class="pill">Volunteer Management</span>
-          <span class="pill">Communication</span>
-          <span class="pill">Knowledge Sharing</span>
+          <span class="pill">Jira</span>
+          <span class="pill">Azure DevOps</span>
+          <span class="pill">Smartsheet</span>
+          <span class="pill">Visio</span>
+          <span class="pill">Excel</span>
+          <span class="pill">PowerPoint</span>
+          <span class="pill">RapidMiner</span>
+          <span class="pill">Minitab</span>
+          <span class="pill">SAS JMP</span>
         </div>
-      </div>
-    </details>
 
-    <details class="experience-card">
-      <summary>
-        <span>
-          <span class="job-title">IT Support Engineer</span>
-          <span class="job-company">NJIT IST Service Desk</span>
-          <span class="job-meta">June 2019 – December 2020</span>
-        </span>
-      </summary>
-      <div class="experience-content">
-        <ul>
-          <li>Provided frontline technical support to hundreds of users, handling approximately 10–30 requests per week across accounts, software, VPN, email, network and system access.</li>
-          <li>Resolved technical issues through systematic troubleshooting, minimizing disruptions to user productivity and daily operations.</li>
-        </ul>
-        <span class="detail-label">Core Competencies</span>
+
+        <h3 class="pill-heading">Enterprise Systems &amp; Platforms</h3>
+
         <div class="pill-group">
-          <span class="pill">Technical Support</span>
-          <span class="pill">Troubleshooting</span>
-          <span class="pill">Customer Service</span>
-          <span class="pill">Problem Solving</span>
+          <span class="pill">PeopleSoft</span>
+          <span class="pill">Blackbaud Raiser’s Edge</span>
+          <span class="pill">Ellucian Advance</span>
+          <span class="pill">Salesforce</span>
+          <span class="pill">Data Cookbook</span>
+          <span class="pill">OpenMetadata</span>
+          <span class="pill">Secoda</span>
+          <span class="pill">Microsoft Purview</span>
+          <span class="pill">Git</span>
+          <span class="pill">GitHub</span>
+          <span class="pill">GitLab</span>
         </div>
+
       </div>
     </details>
-  </section>
 
-  <!-- CERTIFICATIONS -->
-  <section class="section" id="certifications">
-    <h2 class="section-title">Certifications</h2>
-    <ul class="bullet-list">
-      <li><strong>Salesforce Certified Tableau Data Analyst</strong> — Professional Tableau analytics. <a href="https://trailhead.salesforce.com/en/credentials/verification/" target="_blank" rel="noopener">Credential verification</a></li>
-      <li><strong>AWS Certified Solutions Architect – Associate</strong> — Cloud architecture. <a href="https://aws.amazon.com/certification/certification-digital-badges/" target="_blank" rel="noopener">AWS certification badges</a></li>
-      <li><strong>Generative AI Training – University of Nebraska at Omaha</strong> — Generative AI training and teacher development. <a href="https://www.unomaha.edu/" target="_blank" rel="noopener">UNO</a></li>
-      <li><strong>Ongoing professional development</strong> — Coursera, LinkedIn Learning, O’Reilly, Microsoft Learn and Salesforce Trailblazer. <a href="https://www.coursera.org/" target="_blank" rel="noopener">Coursera</a> | <a href="https://www.linkedin.com/learning/" target="_blank" rel="noopener">LinkedIn Learning</a> | <a href="https://learn.microsoft.com/" target="_blank" rel="noopener">Microsoft Learn</a></li>
-    </ul>
-  </section>
 
-  <!-- PROFESSIONAL ACTIVITIES AND RECOGNITIONS -->
-  <section class="section" id="activities">
-    <h2 class="section-title">Professional Activities &amp; Recognitions</h2>
-    <ul class="bullet-list">
-      <li><strong>ACM dg.o 2021:</strong> Co-authored and presented research; recipient of the Best Poster Award.</li>
-      <li><strong>Higher Education Data Warehousing (HEDW):</strong> Ranked #6 for knowledge sharing and engagement; HETUG contributor. <a href="https://www.hedw.org/" target="_blank" rel="noopener">HEDW</a></li>
-      <li><strong>UNO Spring AI Summit:</strong> Presenter sharing work and insights related to artificial intelligence. <a href="https://www.unomaha.edu/" target="_blank" rel="noopener">UNO</a></li>
-      <li><strong>NJIT:</strong> Graduate recognition for applied machine learning research and Women in Computing outreach; recipient of a competitive graduate award. <a href="https://www.njit.edu/" target="_blank" rel="noopener">NJIT</a></li>
-    </ul>
-  </section>
+    <!-- =====================================================
+         19. PROFESSIONAL EXPERIENCE
+         Each job can be expanded independently.
+         Core Competencies and Technical Skills are styled
+         as separate subheadings within each job.
+         ===================================================== -->
 
-  <!-- VOLUNTEER: CLICK HEADER TO EXPAND -->
-  <details class="section expandable" id="volunteer">
-    <summary>Volunteer Experience &amp; Community Engagement</summary>
-    <div class="expandable-content">
+    <section class="section" id="experience">
+
+      <h2 class="section-title">Professional Experience</h2>
+
+
+      <!-- UNO EXPERIENCE -->
+
+      <details class="experience-card">
+
+        <summary>
+          <span>
+            <span class="job-title">
+              Senior Business Analyst (BI Analyst)
+            </span>
+
+            <span class="job-company">
+              University of Nebraska at Omaha (UNO) | Omaha, Nebraska
+            </span>
+
+            <span class="job-meta">
+              April 2024 – September 2026
+            </span>
+          </span>
+        </summary>
+
+        <div class="experience-content">
+
+          <ul>
+            <li>
+              Led requirements gathering and UAT with stakeholders
+              and customers, delivering self-service Power BI/Tableau
+              dashboards for acquisition, retention and outcome
+              KPIs—including graduation, enrollment and student
+              success—to support strategic decision-making.
+            </li>
+
+            <li>
+              Established data governance and documentation standards
+              through metadata dashboards, report catalogs and data
+              dictionaries, reducing reliance on third-party tools
+              and improving transparency, consistency and maintainability.
+            </li>
+
+            <li>
+              Built Salesforce CRM and PeopleSoft ERP reporting and
+              cross-system reconciliation dashboards, automating
+              validation and auditing with approximately 85%
+              improvement in process efficiency and saving up to
+              four hours per reporting cycle.
+            </li>
+
+            <li>
+              Modernized BI delivery through Agile, Git version control,
+              SQL standards and optimization, templates, code reviews
+              and Jira boards.
+            </li>
+
+            <li>
+              Led a Generative AI project, mentored colleagues on
+              responsible AI, and guided interns on predictive
+              modeling and Salesforce projects supporting IESS.
+            </li>
+          </ul>
+
+
+          <!-- CORE COMPETENCIES FOR THIS ROLE -->
+
+          <span class="detail-label">Core Competencies</span>
+
+          <div class="pill-group">
+            <span class="pill">Business Analysis</span>
+            <span class="pill">Requirements Gathering</span>
+            <span class="pill">Stakeholder Management</span>
+            <span class="pill">BI &amp; Analytics</span>
+            <span class="pill">Data Governance</span>
+            <span class="pill">Process Automation</span>
+            <span class="pill">Agile Delivery</span>
+            <span class="pill">UAT</span>
+            <span class="pill">Responsible AI</span>
+            <span class="pill">Mentoring</span>
+          </div>
+
+
+          <!-- TECHNICAL SKILLS FOR THIS ROLE -->
+
+          <span class="detail-label">Technical Skills</span>
+
+          <div class="pill-group">
+            <span class="pill">Power BI</span>
+            <span class="pill">Tableau</span>
+            <span class="pill">SQL</span>
+            <span class="pill">Salesforce</span>
+            <span class="pill">PeopleSoft</span>
+            <span class="pill">Git</span>
+            <span class="pill">GitHub</span>
+            <span class="pill">Jira</span>
+            <span class="pill">Generative AI</span>
+            <span class="pill">Predictive Modeling</span>
+          </div>
+
+        </div>
+      </details>
+
+
+      <!-- CREIGHTON UNIVERSITY EXPERIENCE -->
+
+      <details class="experience-card">
+
+        <summary>
+          <span>
+            <span class="job-title">
+              Senior Business Analyst (Reporting &amp; BI Analyst)
+            </span>
+
+            <span class="job-company">
+              Creighton University | Omaha, Nebraska
+            </span>
+
+            <span class="job-meta">
+              February 2021 – February 2024
+            </span>
+          </span>
+        </summary>
+
+        <div class="experience-content">
+
+          <ul>
+            <li>
+              Partnered with senior leadership and cross-functional
+              stakeholders to translate requirements into Power BI,
+              Tableau and SSRS solutions using CRM data from Advance
+              and Blackbaud, supporting revenue, performance and
+              engagement reporting.
+            </li>
+
+            <li>
+              Developed CRM-based segmentation and Power BI dashboards
+              for performance and KPIs, contributing to more than
+              $500K raised from 2,300+ donors.
+            </li>
+
+            <li>
+              Optimized SQL queries, reducing execution time by 75%;
+              enhanced data quality checks, improving operational
+              efficiency by 95%.
+            </li>
+
+            <li>
+              Established data governance through data dictionaries,
+              process documentation, data models, report catalogs
+              and metadata assets, laying the foundation for
+              enterprise Salesforce CRM.
+            </li>
+          </ul>
+
+
+          <span class="detail-label">Core Competencies</span>
+
+          <div class="pill-group">
+            <span class="pill">Business Analysis</span>
+            <span class="pill">Stakeholder Engagement</span>
+            <span class="pill">Requirements Translation</span>
+            <span class="pill">Dashboard Development</span>
+            <span class="pill">Data Segmentation</span>
+            <span class="pill">Data Quality</span>
+            <span class="pill">Data Governance</span>
+            <span class="pill">Process Improvement</span>
+          </div>
+
+
+          <span class="detail-label">Technical Skills</span>
+
+          <div class="pill-group">
+            <span class="pill">Power BI</span>
+            <span class="pill">Tableau</span>
+            <span class="pill">SSRS</span>
+            <span class="pill">SQL</span>
+            <span class="pill">Blackbaud</span>
+            <span class="pill">Ellucian Advance</span>
+            <span class="pill">Salesforce</span>
+            <span class="pill">Data Modeling</span>
+          </div>
+
+        </div>
+      </details>
+
+
+      <!-- LTI EXPERIENCE -->
+
+      <details class="experience-card">
+
+        <summary>
+          <span>
+            <span class="job-title">
+              Business Analyst (Data Analyst / BI Analyst / Data Engineer)
+            </span>
+
+            <span class="job-company">
+              Larsen &amp; Toubro Infotech (LTI)
+            </span>
+
+            <span class="job-meta">
+              October 2016 – December 2018
+            </span>
+          </span>
+        </summary>
+
+        <div class="experience-content">
+
+          <ul>
+            <li>
+              Developed SSRS reports and Qlik dashboards for insurance
+              claims, bonds, liabilities, fraud trends and business KPIs.
+            </li>
+
+            <li>
+              Automated ETL and manual reporting processes using
+              SSIS and Informatica, eliminating approximately
+              90 hours of manual effort.
+            </li>
+
+            <li>
+              Optimized SQL queries, stored procedures, views and
+              database processes, reducing report load time by 75%.
+            </li>
+
+            <li>
+              Worked with cross-functional teams on production
+              troubleshooting, report validation and issue resolution.
+            </li>
+
+            <li>
+              Analyzed claims and policyholder data to identify
+              fraud patterns, customer lifetime value and
+              premium pricing insights.
+            </li>
+          </ul>
+
+
+          <span class="detail-label">Core Competencies</span>
+
+          <div class="pill-group">
+            <span class="pill">Business Analysis</span>
+            <span class="pill">Insurance Analytics</span>
+            <span class="pill">Claims Analysis</span>
+            <span class="pill">Fraud Analysis</span>
+            <span class="pill">Process Automation</span>
+            <span class="pill">Data Analysis</span>
+            <span class="pill">Production Support</span>
+          </div>
+
+
+          <span class="detail-label">Technical Skills</span>
+
+          <div class="pill-group">
+            <span class="pill">SQL</span>
+            <span class="pill">SSRS</span>
+            <span class="pill">Qlik</span>
+            <span class="pill">SSIS</span>
+            <span class="pill">Informatica</span>
+            <span class="pill">ETL</span>
+            <span class="pill">Database Optimization</span>
+          </div>
+
+        </div>
+      </details>
+
+    </section>
+
+
+    <!-- =====================================================
+         20. ADDITIONAL PROFESSIONAL EXPERIENCE
+         Each position expands independently.
+         ===================================================== -->
+
+    <section class="section" id="additional-experience">
+
+      <h2 class="section-title">Additional Professional Experience</h2>
+
+
+      <!-- NEST GLOBAL SOLUTIONS -->
+
+      <details class="experience-card">
+
+        <summary>
+          <span>
+            <span class="job-title">Data Scientist Intern</span>
+            <span class="job-company">Nest Global Solutions</span>
+            <span class="job-meta">September 2020 – December 2020</span>
+          </span>
+        </summary>
+
+        <div class="experience-content">
+
+          <ul>
+            <li>
+              Applied machine learning and NLP techniques to develop
+              a healthcare information retrieval chatbot and search engine.
+            </li>
+
+            <li>
+              Developed sentiment models achieving up to 83%
+              text classification accuracy and 80% sentiment
+              analysis performance.
+            </li>
+
+            <li>
+              Built end-to-end data pipelines, exploratory analysis
+              and automated data preparation workflows.
+            </li>
+
+            <li>
+              Worked with AWS pipelines and semantic search APIs.
+            </li>
+          </ul>
+
+          <span class="detail-label">Core Competencies</span>
+
+          <div class="pill-group">
+            <span class="pill">Machine Learning</span>
+            <span class="pill">NLP</span>
+            <span class="pill">Sentiment Analysis</span>
+            <span class="pill">Data Pipelines</span>
+            <span class="pill">Healthcare Analytics</span>
+          </div>
+
+          <span class="detail-label">Technical Skills</span>
+
+          <div class="pill-group">
+            <span class="pill">Python</span>
+            <span class="pill">AWS</span>
+            <span class="pill">NLP</span>
+            <span class="pill">Machine Learning</span>
+            <span class="pill">Semantic Search APIs</span>
+          </div>
+
+        </div>
+      </details>
+
+
+      <!-- NJIT RESEARCH ASSISTANT -->
+
+      <details class="experience-card">
+
+        <summary>
+          <span>
+            <span class="job-title">Research Assistant</span>
+            <span class="job-company">New Jersey Institute of Technology (NJIT)</span>
+            <span class="job-meta">
+              November 2019 – December 2020 |
+              Professors Dr. James Geller &amp; Dr. Soon Ae Chun
+            </span>
+          </span>
+        </summary>
+
+        <div class="experience-content">
+
+          <ul>
+            <li>
+              Conducted Python-based web scraping, exploratory data
+              analysis, data mining and preprocessing for social
+              media and misinformation research.
+            </li>
+
+            <li>
+              Applied named entity recognition and sentiment analysis
+              techniques to research datasets.
+            </li>
+
+            <li>
+              Developed a Flask-based fake news detection application
+              using NLP, Docker and cloud technologies.
+            </li>
+
+            <li>
+              Improved model accuracy from 95% to 97% through
+              feature engineering and model optimization.
+            </li>
+
+            <li>
+              Co-authored and presented research at ACM dg.o 2021
+              and received a Best Poster Award.
+            </li>
+          </ul>
+
+          <span class="detail-label">Core Competencies</span>
+
+          <div class="pill-group">
+            <span class="pill">Applied Research</span>
+            <span class="pill">Data Mining</span>
+            <span class="pill">NLP</span>
+            <span class="pill">Machine Learning</span>
+            <span class="pill">Research Communication</span>
+          </div>
+
+          <span class="detail-label">Technical Skills</span>
+
+          <div class="pill-group">
+            <span class="pill">Python</span>
+            <span class="pill">Flask</span>
+            <span class="pill">Docker</span>
+            <span class="pill">NLP</span>
+            <span class="pill">Web Scraping</span>
+            <span class="pill">Cloud Technologies</span>
+          </div>
+
+        </div>
+      </details>
+
+
+      <!-- NJIT GWICS OUTREACH ASSISTANT -->
+
+      <details class="experience-card">
+
+        <summary>
+          <span>
+            <span class="job-title">Outreach Assistant</span>
+            <span class="job-company">
+              NJIT Graduate Women in Computing Society (GWiCS)
+            </span>
+            <span class="job-meta">October 2019 – December 2020</span>
+          </span>
+        </summary>
+
+        <div class="experience-content">
+
+          <ul>
+            <li>
+              Supported STEM events, workshops and guest speaker
+              programs involving faculty, alumni, public schools
+              and community partners.
+            </li>
+
+            <li>
+              Coordinated volunteer recruitment, onboarding,
+              succession planning and knowledge sharing.
+            </li>
+
+            <li>
+              Supported digital communications and outreach
+              initiatives to increase participation and engagement.
+            </li>
+          </ul>
+
+          <span class="detail-label">Core Competencies</span>
+
+          <div class="pill-group">
+            <span class="pill">Community Engagement</span>
+            <span class="pill">Event Coordination</span>
+            <span class="pill">Volunteer Management</span>
+            <span class="pill">Communication</span>
+            <span class="pill">Knowledge Sharing</span>
+          </div>
+
+        </div>
+      </details>
+
+
+      <!-- NJIT IT SUPPORT ENGINEER -->
+
+      <details class="experience-card">
+
+        <summary>
+          <span>
+            <span class="job-title">IT Support Engineer</span>
+            <span class="job-company">NJIT IST Service Desk</span>
+            <span class="job-meta">June 2019 – December 2020</span>
+          </span>
+        </summary>
+
+        <div class="experience-content">
+
+          <ul>
+            <li>
+              Provided frontline technical support to hundreds
+              of users, handling approximately 10–30 requests per
+              week across accounts, software, VPN, email, network
+              and system access.
+            </li>
+
+            <li>
+              Resolved technical issues through systematic
+              troubleshooting, minimizing disruptions to user
+              productivity and daily operations.
+            </li>
+          </ul>
+
+          <span class="detail-label">Core Competencies</span>
+
+          <div class="pill-group">
+            <span class="pill">Technical Support</span>
+            <span class="pill">Troubleshooting</span>
+            <span class="pill">Customer Service</span>
+            <span class="pill">Problem Solving</span>
+          </div>
+
+        </div>
+      </details>
+
+    </section>
+
+
+    <!-- =====================================================
+         21. CERTIFICATIONS
+         Always visible.
+         ===================================================== -->
+
+    <section class="section" id="certifications">
+
+      <h2 class="section-title">Certifications</h2>
+
       <ul class="bullet-list">
-        <li><strong>Nebraska Women in STEM:</strong> Participated in STEM events and the 2026 award committee, with continued involvement planned for 2027.</li>
-        <li><strong>Data Visualization Society:</strong> Engaged in data visualization learning, community knowledge sharing and professional development.</li>
-        <li><strong>Big Brothers Big Sisters:</strong> Supported mentoring and community engagement initiatives.</li>
-        <li><strong>AnitaB.org:</strong> Participated in mentoring, teaching, blogs and committee-related activities.</li>
-        <li><strong>UNO and Creighton:</strong> Contributed to wellness committees and staff volunteer initiatives.</li>
+
+        <li>
+          <strong>Salesforce Certified Tableau Data Analyst</strong>
+          — Professional Tableau analytics.
+          <a href="https://trailhead.salesforce.com/en/credentials/verification/"
+             target="_blank" rel="noopener">
+            Credential verification
+          </a>
+        </li>
+
+        <li>
+          <strong>AWS Certified Solutions Architect – Associate</strong>
+          — Cloud architecture.
+          <a href="https://aws.amazon.com/certification/certification-digital-badges/"
+             target="_blank" rel="noopener">
+            AWS certification badges
+          </a>
+        </li>
+
+        <li>
+          <strong>Generative AI Training – University of Nebraska at Omaha</strong>
+          — Generative AI training and teacher development.
+          <a href="https://www.unomaha.edu/"
+             target="_blank" rel="noopener">
+            UNO
+          </a>
+        </li>
+
+        <li>
+          <strong>Ongoing professional development</strong>
+          — Coursera, LinkedIn Learning, O’Reilly,
+          Microsoft Learn and Salesforce Trailblazer.
+          <a href="https://www.coursera.org/" target="_blank" rel="noopener">Coursera</a> |
+          <a href="https://www.linkedin.com/learning/" target="_blank" rel="noopener">LinkedIn Learning</a> |
+          <a href="https://learn.microsoft.com/" target="_blank" rel="noopener">Microsoft Learn</a>
+        </li>
+
       </ul>
-    </div>
-  </details>
 
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <h2 class="section-title">Let’s Connect</h2>
-    <p>I welcome opportunities to connect, collaborate and contribute to business transformation through analytics, technology and data-driven decision-making.</p>
+    </section>
 
-    <div class="contact-grid">
-      <div class="contact-item">
-        <strong>Email</strong>
-        <a href="mailto:sirishabojjireddy12@gmail.com">sirishabojjireddy12@gmail.com</a>
+
+    <!-- =====================================================
+         22. PROFESSIONAL ACTIVITIES AND RECOGNITIONS
+         Always visible.
+         ===================================================== -->
+
+    <section class="section" id="activities">
+
+      <h2 class="section-title">
+        Professional Activities &amp; Recognitions
+      </h2>
+
+      <ul class="bullet-list">
+
+        <li>
+          <strong>ACM dg.o 2021:</strong>
+          Co-authored and presented research; recipient of
+          the Best Poster Award.
+        </li>
+
+        <li>
+          <strong>Higher Education Data Warehousing (HEDW):</strong>
+          Ranked #6 for knowledge sharing and engagement;
+          HETUG contributor.
+          <a href="https://www.hedw.org/"
+             target="_blank" rel="noopener">
+            HEDW
+          </a>
+        </li>
+
+        <li>
+          <strong>UNO Spring AI Summit:</strong>
+          Presenter sharing work and insights related to
+          artificial intelligence.
+          <a href="https://www.unomaha.edu/"
+             target="_blank" rel="noopener">
+            UNO
+          </a>
+        </li>
+
+        <li>
+          <strong>NJIT:</strong>
+          Graduate recognition for applied machine learning
+          research and Women in Computing outreach; recipient
+          of a competitive graduate award.
+          <a href="https://www.njit.edu/"
+             target="_blank" rel="noopener">
+            NJIT
+          </a>
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- =====================================================
+         23. VOLUNTEER EXPERIENCE
+         The heading itself is clickable.
+         + / − is automatically displayed.
+         ===================================================== -->
+
+    <details class="section expandable" id="volunteer">
+
+      <summary>Volunteer Experience &amp; Community Engagement</summary>
+
+      <div class="expandable-content">
+
+        <ul class="bullet-list">
+
+          <li>
+            <strong>Nebraska Women in STEM:</strong>
+            Participated in STEM events and the 2026 award committee,
+            with continued involvement planned for 2027.
+          </li>
+
+          <li>
+            <strong>Data Visualization Society:</strong>
+            Engaged in data visualization learning, community
+            knowledge sharing and professional development.
+          </li>
+
+          <li>
+            <strong>Big Brothers Big Sisters:</strong>
+            Supported mentoring and community engagement initiatives.
+          </li>
+
+          <li>
+            <strong>AnitaB.org:</strong>
+            Participated in mentoring, teaching, blogs and
+            committee-related activities.
+          </li>
+
+          <li>
+            <strong>UNO and Creighton:</strong>
+            Contributed to wellness committees and staff
+            volunteer initiatives.
+          </li>
+
+        </ul>
+
       </div>
+    </details>
 
-      <div class="contact-item">
-        <strong>Phone</strong>
-        <a href="tel:+917530040519">+91-7530040519</a>
+
+    <!-- =====================================================
+         24. LET'S CONNECT
+         Location is intentionally excluded.
+         Only email, phone, LinkedIn and GitHub are displayed.
+         ===================================================== -->
+
+    <section class="section" id="contact">
+
+      <h2 class="section-title">Let’s Connect</h2>
+
+      <p>
+        I welcome opportunities to connect, collaborate and
+        contribute to business transformation through analytics,
+        technology and data-driven decision-making.
+      </p>
+
+      <div class="contact-grid">
+
+        <!-- Email -->
+
+        <div class="contact-item">
+          <strong>Email</strong>
+          <a href="mailto:sirishabojjireddy12@gmail.com">
+            sirishabojjireddy12@gmail.com
+          </a>
+        </div>
+
+        <!-- Phone -->
+
+        <div class="contact-item">
+          <strong>Phone</strong>
+          <a href="tel:+917530040519">
+            +91-7530040519
+          </a>
+        </div>
+
+        <!-- LinkedIn -->
+
+        <div class="contact-item">
+          <strong>LinkedIn</strong>
+          <a href="https://www.linkedin.com/in/sirishabojjireddy/"
+             target="_blank" rel="noopener">
+            linkedin.com/in/sirishabojjireddy
+          </a>
+        </div>
+
+        <!-- GitHub -->
+
+        <div class="contact-item">
+          <strong>GitHub</strong>
+          <a href="https://github.com/sirishabojjireddy"
+             target="_blank" rel="noopener">
+            github.com/sirishabojjireddy
+          </a>
+        </div>
+
       </div>
+    </section>
 
-      <div class="contact-item">
-        <strong>LinkedIn</strong>
-        <a href="https://www.linkedin.com/in/sirishabojjireddy/" target="_blank" rel="noopener">linkedin.com/in/sirishabojjireddy</a>
-      </div>
+  </main>
 
-      <div class="contact-item">
-        <strong>GitHub</strong>
-        <a href="https://github.com/sirishabojjireddy" target="_blank" rel="noopener">github.com/sirishabojjireddy</a>
-      </div>
 
-      <div class="contact-item">
-        <strong>Location</strong>
-        <span>India</span>
-      </div>
-    </div>
-  </section>
+  <!-- =====================================================
+       25. FOOTER
+       ===================================================== -->
 
-</main>
+  <footer>
 
-<footer>
-  © 2026 Sirisha Bojjireddy | Professional Portfolio
-  <a href="#top">Back to Top ↑</a>
-</footer>
+    © 2026 Sirisha Bojjireddy | Professional Portfolio
+
+    <a href="#top">Back to Top ↑</a>
+
+  </footer>
+
 
 </body>
 </html>
